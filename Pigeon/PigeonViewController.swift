@@ -8,19 +8,22 @@
 
 import UIKit
 
-class CreateViewController: PigeonViewController {
-
+class PigeonViewController: UIViewController {
+    let colors = PigeonColors()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = colors.darkGray()
         
+        let logo = UIImage(named: "logo")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
-

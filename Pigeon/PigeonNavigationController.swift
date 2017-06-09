@@ -17,7 +17,10 @@ class PigeonNavigationController: UINavigationController {
         self.navigationBar.barTintColor = colors.lightGray()
         self.navigationBar.tintColor = colors.lightGreen()
         
-        
+        let logo = UIImage(named: "logo")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
+        self.navigationItem.title = "Pigeon"
 
     }
     

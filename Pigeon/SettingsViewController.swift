@@ -8,14 +8,11 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: PigeonViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let colors = PigeonColors()
-        
-        self.view.backgroundColor = colors.darkGray()
     }
     
     override func didReceiveMemoryWarning() {

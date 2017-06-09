@@ -18,6 +18,9 @@
 		407C21841EEA670D00EDD88B /* PigeonTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21831EEA670D00EDD88B /* PigeonTabBarController.swift */; };
 		407C21861EEA6C8200EDD88B /* PigeonColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21851EEA6C8200EDD88B /* PigeonColors.swift */; };
 		407C21881EEA71ED00EDD88B /* PigeonNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21871EEA71ED00EDD88B /* PigeonNavigationController.swift */; };
+		407C218A1EEA824400EDD88B /* PigeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21891EEA824400EDD88B /* PigeonViewController.swift */; };
+		407C218C1EEA89AE00EDD88B /* YourDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C218B1EEA89AE00EDD88B /* YourDetailsViewController.swift */; };
+		407C218E1EEA89C700EDD88B /* NewRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C218D1EEA89C700EDD88B /* NewRequestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		407C21831EEA670D00EDD88B /* PigeonTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PigeonTabBarController.swift; sourceTree = "<group>"; };
 		407C21851EEA6C8200EDD88B /* PigeonColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PigeonColors.swift; sourceTree = "<group>"; };
 		407C21871EEA71ED00EDD88B /* PigeonNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PigeonNavigationController.swift; sourceTree = "<group>"; };
+		407C21891EEA824400EDD88B /* PigeonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PigeonViewController.swift; sourceTree = "<group>"; };
+		407C218B1EEA89AE00EDD88B /* YourDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourDetailsViewController.swift; sourceTree = "<group>"; };
+		407C218D1EEA89C700EDD88B /* NewRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRequestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +97,12 @@
 				407C21831EEA670D00EDD88B /* PigeonTabBarController.swift */,
 				407C21851EEA6C8200EDD88B /* PigeonColors.swift */,
 				407C21611EEA63FF00EDD88B /* ViewViewController.swift */,
+				407C21891EEA824400EDD88B /* PigeonViewController.swift */,
 				407C21631EEA63FF00EDD88B /* CreateViewController.swift */,
 				407C21811EEA662500EDD88B /* SettingsViewController.swift */,
 				407C21651EEA63FF00EDD88B /* Main.storyboard */,
+				407C218B1EEA89AE00EDD88B /* YourDetailsViewController.swift */,
+				407C218D1EEA89C700EDD88B /* NewRequestViewController.swift */,
 				407C21871EEA71ED00EDD88B /* PigeonNavigationController.swift */,
 				407C21681EEA63FF00EDD88B /* Assets.xcassets */,
 				407C216A1EEA63FF00EDD88B /* LaunchScreen.storyboard */,
@@ -219,8 +228,11 @@
 				407C21881EEA71ED00EDD88B /* PigeonNavigationController.swift in Sources */,
 				407C21621EEA63FF00EDD88B /* ViewViewController.swift in Sources */,
 				407C21861EEA6C8200EDD88B /* PigeonColors.swift in Sources */,
+				407C218E1EEA89C700EDD88B /* NewRequestViewController.swift in Sources */,
 				407C21841EEA670D00EDD88B /* PigeonTabBarController.swift in Sources */,
+				407C218A1EEA824400EDD88B /* PigeonViewController.swift in Sources */,
 				407C21821EEA662500EDD88B /* SettingsViewController.swift in Sources */,
+				407C218C1EEA89AE00EDD88B /* YourDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +440,7 @@
 				407C217D1EEA63FF00EDD88B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		407C217E1EEA63FF00EDD88B /* Build configuration list for PBXNativeTarget "PigeonTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +449,7 @@
 				407C21801EEA63FF00EDD88B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
