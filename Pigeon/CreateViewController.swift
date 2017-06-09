@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  Pigeon
 //
 //  Created by Cristian Saguil on 6/9/17.
@@ -8,11 +8,15 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class CreateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let colors = PigeonColors()
+        
+        self.view.backgroundColor = colors.darkGray()
     }
 
     override func didReceiveMemoryWarning() {
