@@ -8,16 +8,41 @@
 
 import UIKit
 
-class SettingsViewController: PigeonViewController {
+class SettingsViewController: PigeonViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet var tableView: UITableView!
+    let fields = ["About", "Legal"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.backgroundColor = colors.darkGray()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fields.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 45.0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
+        cell.backgroundColor = colors.darkGray()
+        var label: UILabel = cell.viewWithTag(1001) as! UILabel
+        label.text = fields[indexPath.row]
+        label.textColor = UIColor.white
+        
+        return cell
     }
     
     
