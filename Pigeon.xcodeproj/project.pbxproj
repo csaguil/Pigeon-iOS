@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4055D3EF1EF2B650003BCEF9 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055D3EE1EF2B650003BCEF9 /* ItemDetailViewController.swift */; };
 		407C21601EEA63FF00EDD88B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C215F1EEA63FF00EDD88B /* AppDelegate.swift */; };
 		407C21621EEA63FF00EDD88B /* ViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21611EEA63FF00EDD88B /* ViewViewController.swift */; };
 		407C21641EEA63FF00EDD88B /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21631EEA63FF00EDD88B /* CreateViewController.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4055D3EE1EF2B650003BCEF9 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		407C215C1EEA63FF00EDD88B /* Pigeon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pigeon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		407C215F1EEA63FF00EDD88B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		407C21611EEA63FF00EDD88B /* ViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				407C21831EEA670D00EDD88B /* PigeonTabBarController.swift */,
 				407C21851EEA6C8200EDD88B /* PigeonColors.swift */,
 				407C21611EEA63FF00EDD88B /* ViewViewController.swift */,
+				4055D3EE1EF2B650003BCEF9 /* ItemDetailViewController.swift */,
 				407C21891EEA824400EDD88B /* PigeonViewController.swift */,
 				407C21631EEA63FF00EDD88B /* CreateViewController.swift */,
 				407C21811EEA662500EDD88B /* SettingsViewController.swift */,
@@ -265,6 +268,7 @@
 				407C218E1EEA89C700EDD88B /* NewRequestViewController.swift in Sources */,
 				407C21841EEA670D00EDD88B /* PigeonTabBarController.swift in Sources */,
 				407C218A1EEA824400EDD88B /* PigeonViewController.swift in Sources */,
+				4055D3EF1EF2B650003BCEF9 /* ItemDetailViewController.swift in Sources */,
 				407C21821EEA662500EDD88B /* SettingsViewController.swift in Sources */,
 				407C218C1EEA89AE00EDD88B /* YourDetailsViewController.swift in Sources */,
 			);

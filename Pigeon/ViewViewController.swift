@@ -34,6 +34,7 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     @IBOutlet var buttonRides: UIButton!
     @IBOutlet var buttonRequests: UIButton!
     @IBOutlet var tableView: UITableView!
+    var selected = 0
     
     var notificationToken: NotificationToken!
     var realm: Realm!
@@ -55,6 +56,13 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let destinationVC = segue.destination as! ItemDetailViewController
+            destinationVC.ride = self.realm.objects(Ride.self)[selected]
+        }
     }
     
     func setupUI(){
@@ -125,10 +133,12 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         if self.realm != nil {
             let ride: Ride = self.realm.objects(Ride.self)[indexPath.row]
         
-            let title: UILabel = cell.viewWithTag(1001) as! UILabel
+            let originTitle: UILabel = cell.viewWithTag(2001) as! UILabel
+            let destTitle: UILabel = cell.viewWithTag(2002) as! UILabel
             let date: UILabel = cell.viewWithTag(1002) as! UILabel
             let time: UILabel = cell.viewWithTag(1003) as! UILabel
-            title.text = ride.origin + " -> " + ride.destination
+            originTitle.text = ride.origin
+            destTitle.text = ride.destination
             date.text = ride.date
             time.text = ride.time
         }
@@ -139,6 +149,12 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         return 90.0
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let itemDetailVC = ItemDetailViewController()
+//        itemDetailVC.ride = self.realm.objects(Ride.self)[indexPath.row]
+        selected = indexPath.row
+        self.performSegue(withIdentifier: "showDetail", sender: nil)
+    }
 
     @IBAction func toggleRides(_ sender: Any) {
         print("Rides")
