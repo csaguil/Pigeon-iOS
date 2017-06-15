@@ -19,10 +19,15 @@ final class RideList: Object {
 }
 
 final class Ride: Object {
+    dynamic var firstName: String = ""
+    dynamic var lastName: String = ""
+    dynamic var email: String = ""
+    dynamic var phone: String = ""
     dynamic var origin: String = ""
     dynamic var destination: String = ""
     dynamic var date: String = ""
     dynamic var time: String = ""
+    dynamic var seats: Int = 0
 }
 
 class ViewViewController: PigeonViewController, UITableViewDataSource, UITableViewDelegate {
@@ -30,7 +35,6 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     @IBOutlet var buttonRequests: UIButton!
     @IBOutlet var tableView: UITableView!
     
-    var rides = List<Ride>()
     var notificationToken: NotificationToken!
     var realm: Realm!
     
@@ -82,20 +86,22 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
                     if let realm = realm {
                         // Realm successfully opened, with all remote data available
                         self.realm = realm
+                        self.tableView.reloadData()
 
-                        func updateList() {
-                            for ride in self.realm.objects(Ride.self){
-                                if !self.rides.contains(ride){
-                                    self.rides.append(ride)
-                                }
-                            }
-                            self.tableView.reloadData()
-                        }
-                        updateList()
+//                        func updateList() {
+//                            for ride in self.realm.objects(Ride.self){
+//                                if !self.rides.contains(ride){
+//                                    self.rides.append(ride)
+//                                }
+//                            }
+//                            self.tableView.reloadData()
+//                        }
+//                        updateList()
                         
                         // Notify us when Realm changes
                         self.notificationToken = self.realm.addNotificationBlock { _ in
-                            updateList()
+//                            updateList()
+                            self.tableView.reloadData()
                         }
                     }
 
@@ -117,7 +123,7 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         cell.backgroundColor = colors.darkGray()
         if self.realm != nil {
-            let ride: Ride = self.rides[indexPath.row]
+            let ride: Ride = self.realm.objects(Ride.self)[indexPath.row]
         
             let title: UILabel = cell.viewWithTag(1001) as! UILabel
             let date: UILabel = cell.viewWithTag(1002) as! UILabel
