@@ -70,24 +70,32 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnL-7q-Str">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Origin -&gt; Destination" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8WD-T0-kGo">
-                                                            <rect key="frame" x="25" y="8" width="181" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Origin -&gt; Destination" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8WD-T0-kGo">
+                                                            <rect key="frame" x="25" y="15" width="181" height="21"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dd/mm/yyyy     time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysc-Eo-PmI">
-                                                            <rect key="frame" x="25" y="37" width="159.5" height="22"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dd/mm/yyyy " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysc-Eo-PmI">
+                                                            <rect key="frame" x="25" y="44" width="105.5" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ki2-sZ-aa5">
+                                                            <rect key="frame" x="314.5" y="44" width="35.5" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <color key="textColor" red="1" green="1" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="8WD-T0-kGo" firstAttribute="leading" secondItem="bnL-7q-Str" secondAttribute="leading" constant="25" id="ECB-Y4-rS7"/>
-                                                        <constraint firstItem="8WD-T0-kGo" firstAttribute="top" secondItem="bnL-7q-Str" secondAttribute="top" constant="8" id="Zs2-Rq-R9b"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Ki2-sZ-aa5" secondAttribute="trailing" constant="25" id="Prd-yn-D6I"/>
+                                                        <constraint firstItem="8WD-T0-kGo" firstAttribute="top" secondItem="bnL-7q-Str" secondAttribute="top" constant="15" id="Zs2-Rq-R9b"/>
                                                         <constraint firstItem="ysc-Eo-PmI" firstAttribute="top" secondItem="8WD-T0-kGo" secondAttribute="bottom" constant="8" id="aML-zM-ajY"/>
+                                                        <constraint firstItem="Ki2-sZ-aa5" firstAttribute="top" secondItem="8WD-T0-kGo" secondAttribute="bottom" constant="8" id="b7W-m0-AFV"/>
                                                         <constraint firstItem="ysc-Eo-PmI" firstAttribute="leading" secondItem="bnL-7q-Str" secondAttribute="leading" constant="25" id="mwq-GP-RC4"/>
                                                     </constraints>
                                                 </view>
@@ -376,7 +384,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rho-Nb-q2Q" customClass="PigeonNavigationController" customModule="Pigeon" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Create" image="createIcon" selectedImage="createIconFilled" id="cPa-gy-q4n"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tjl-P1-7z5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tjl-P1-7z5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -395,7 +403,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fjd-7A-yln" customClass="PigeonNavigationController" customModule="Pigeon" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="settingsIcon" selectedImage="settingsIconFilled" id="C4W-AF-Jxy"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6St-Bm-f9E">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6St-Bm-f9E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

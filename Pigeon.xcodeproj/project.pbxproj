@@ -21,6 +21,10 @@
 		407C218A1EEA824400EDD88B /* PigeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21891EEA824400EDD88B /* PigeonViewController.swift */; };
 		407C218C1EEA89AE00EDD88B /* YourDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C218B1EEA89AE00EDD88B /* YourDetailsViewController.swift */; };
 		407C218E1EEA89C700EDD88B /* NewRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C218D1EEA89C700EDD88B /* NewRequestViewController.swift */; };
+		4084E9E61EEFA62500D3219C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4084E9E41EEFA62500D3219C /* Realm.framework */; };
+		4084E9E71EEFA62500D3219C /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4084E9E41EEFA62500D3219C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4084E9E81EEFA62500D3219C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4084E9E51EEFA62500D3219C /* RealmSwift.framework */; };
+		4084E9E91EEFA62500D3219C /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4084E9E51EEFA62500D3219C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +36,21 @@
 			remoteInfo = Pigeon;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4084E9EA1EEFA62500D3219C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4084E9E91EEFA62500D3219C /* RealmSwift.framework in Embed Frameworks */,
+				4084E9E71EEFA62500D3219C /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		407C215C1EEA63FF00EDD88B /* Pigeon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pigeon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +71,9 @@
 		407C21891EEA824400EDD88B /* PigeonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PigeonViewController.swift; sourceTree = "<group>"; };
 		407C218B1EEA89AE00EDD88B /* YourDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourDetailsViewController.swift; sourceTree = "<group>"; };
 		407C218D1EEA89C700EDD88B /* NewRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRequestViewController.swift; sourceTree = "<group>"; };
+		4084E9E41EEFA62500D3219C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		4084E9E51EEFA62500D3219C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		40BF235C1EEFA36400A4711D /* Pigeon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pigeon.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4084E9E81EEFA62500D3219C /* RealmSwift.framework in Frameworks */,
+				4084E9E61EEFA62500D3219C /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +99,8 @@
 		407C21531EEA63FE00EDD88B = {
 			isa = PBXGroup;
 			children = (
+				4084E9E41EEFA62500D3219C /* Realm.framework */,
+				4084E9E51EEFA62500D3219C /* RealmSwift.framework */,
 				407C215E1EEA63FF00EDD88B /* Pigeon */,
 				407C21751EEA63FF00EDD88B /* PigeonTests */,
 				407C215D1EEA63FF00EDD88B /* Products */,
@@ -93,6 +119,7 @@
 		407C215E1EEA63FF00EDD88B /* Pigeon */ = {
 			isa = PBXGroup;
 			children = (
+				40BF235C1EEFA36400A4711D /* Pigeon.entitlements */,
 				407C215F1EEA63FF00EDD88B /* AppDelegate.swift */,
 				407C21831EEA670D00EDD88B /* PigeonTabBarController.swift */,
 				407C21851EEA6C8200EDD88B /* PigeonColors.swift */,
@@ -130,6 +157,7 @@
 				407C21581EEA63FE00EDD88B /* Sources */,
 				407C21591EEA63FE00EDD88B /* Frameworks */,
 				407C215A1EEA63FE00EDD88B /* Resources */,
+				4084E9EA1EEFA62500D3219C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,7 +198,13 @@
 				TargetAttributes = {
 					407C215B1EEA63FE00EDD88B = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = B79KW7LMAH;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					407C21711EEA63FF00EDD88B = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -373,7 +407,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pigeon/Pigeon.entitlements;
+				DEVELOPMENT_TEAM = B79KW7LMAH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Pigeon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cristiansaguil.Pigeon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -385,7 +426,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pigeon/Pigeon.entitlements;
+				DEVELOPMENT_TEAM = B79KW7LMAH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Pigeon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cristiansaguil.Pigeon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
