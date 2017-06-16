@@ -95,20 +95,9 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
                         // Realm successfully opened, with all remote data available
                         self.realm = realm
                         self.tableView.reloadData()
-
-//                        func updateList() {
-//                            for ride in self.realm.objects(Ride.self){
-//                                if !self.rides.contains(ride){
-//                                    self.rides.append(ride)
-//                                }
-//                            }
-//                            self.tableView.reloadData()
-//                        }
-//                        updateList()
                         
                         // Notify us when Realm changes
                         self.notificationToken = self.realm.addNotificationBlock { _ in
-//                            updateList()
                             self.tableView.reloadData()
                         }
                     }
@@ -150,8 +139,6 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let itemDetailVC = ItemDetailViewController()
-//        itemDetailVC.ride = self.realm.objects(Ride.self)[indexPath.row]
         selected = indexPath.row
         self.performSegue(withIdentifier: "showDetail", sender: nil)
     }

@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: a05655debcdcbd6bd17f81acf8ceddff126d2ec5
+PODS:
+  - GoogleMaps (2.3.0):
+    - GoogleMaps/Maps (= 2.3.0)
+  - GoogleMaps/Base (2.3.0)
+  - GoogleMaps/Maps (2.3.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.3.0):
+    - GoogleMaps/Base (= 2.3.0)
+
+DEPENDENCIES:
+  - GoogleMaps
+  - GooglePlaces
+
+SPEC CHECKSUMS:
+  GoogleMaps: 340a6a0bebd17c2db8abcd3921976c7c53c86cb8
+  GooglePlaces: 74d322c74184ea4576184089b496d291cf0dcd38
+
+PODFILE CHECKSUM: c08fb7e60701cae12c78f456e7b4f8dec13eca5c
 
 COCOAPODS: 1.2.1

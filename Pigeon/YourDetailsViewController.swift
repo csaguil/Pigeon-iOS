@@ -37,8 +37,9 @@ class YourDetailsViewController: PigeonViewController, UITableViewDelegate, UITa
         cell.backgroundColor = colors.darkGray()
         
         let textField: UITextField = cell.viewWithTag(1001) as! UITextField
-        textField.placeholder = fields[indexPath.row]
-
+        textField.attributedPlaceholder = NSAttributedString(string: fields[indexPath.row],
+                                                             attributes: [NSForegroundColorAttributeName: UIColor.lightGray])
+        
         let spacerView = UIView(frame:CGRect(x:0, y:0, width:10, height:10))
         textField.leftViewMode = UITextFieldViewMode.always
         textField.leftView = spacerView

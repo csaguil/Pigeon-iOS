@@ -6,6 +6,8 @@ target 'Pigeon' do
   use_frameworks!
 
   # Pods for Pigeon
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 
   target 'PigeonTests' do
     inherit! :search_paths
