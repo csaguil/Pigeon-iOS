@@ -38,7 +38,11 @@ class ItemDetailViewController: PigeonViewController {
             destinationLabel.text = self.ride?.destination
             dateLabel.text = self.ride?.date
             timeLabel.text = self.ride?.time
-            seatsLabel.text = (self.ride?.seats.description)! + " seats available"
+            if self.ride?.seats == 1 {
+                seatsLabel.text = (self.ride?.seats.description)! + " seat available"
+            } else {
+                seatsLabel.text = (self.ride?.seats.description)! + " seats available"
+            }
         }
     }
     
@@ -52,6 +56,7 @@ class ItemDetailViewController: PigeonViewController {
         marker.title = "Sydney"
         marker.snippet = "Australia"
         marker.map = self.mapView
+        
     }
     
 }

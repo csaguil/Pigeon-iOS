@@ -119,6 +119,7 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         cell.backgroundColor = colors.darkGray()
+        cell.selectionStyle = .none
         if self.realm != nil {
             let ride: Ride = self.realm.objects(Ride.self)[indexPath.row]
         

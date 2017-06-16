@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1188D8046FD2DA807C25CDFF /* Pods_Pigeon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E533F435659DA5002B837DE1 /* Pods_Pigeon.framework */; };
 		4055D3EF1EF2B650003BCEF9 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055D3EE1EF2B650003BCEF9 /* ItemDetailViewController.swift */; };
+		4055D3F11EF3ACA0003BCEF9 /* TripDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055D3F01EF3ACA0003BCEF9 /* TripDetailsViewController.swift */; };
 		407C21601EEA63FF00EDD88B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C215F1EEA63FF00EDD88B /* AppDelegate.swift */; };
 		407C21621EEA63FF00EDD88B /* ViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21611EEA63FF00EDD88B /* ViewViewController.swift */; };
 		407C21641EEA63FF00EDD88B /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21631EEA63FF00EDD88B /* CreateViewController.swift */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		18DB7FF5BC5427F654256DF7 /* Pods-Pigeon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pigeon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pigeon/Pods-Pigeon.release.xcconfig"; sourceTree = "<group>"; };
 		4055D3EE1EF2B650003BCEF9 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		4055D3F01EF3ACA0003BCEF9 /* TripDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDetailsViewController.swift; sourceTree = "<group>"; };
 		407C215C1EEA63FF00EDD88B /* Pigeon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pigeon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		407C215F1EEA63FF00EDD88B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		407C21611EEA63FF00EDD88B /* ViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				407C21851EEA6C8200EDD88B /* PigeonColors.swift */,
 				407C21611EEA63FF00EDD88B /* ViewViewController.swift */,
 				4055D3EE1EF2B650003BCEF9 /* ItemDetailViewController.swift */,
+				4055D3F01EF3ACA0003BCEF9 /* TripDetailsViewController.swift */,
 				407C21891EEA824400EDD88B /* PigeonViewController.swift */,
 				407C21631EEA63FF00EDD88B /* CreateViewController.swift */,
 				407C21811EEA662500EDD88B /* SettingsViewController.swift */,
@@ -393,6 +396,7 @@
 			files = (
 				407C21641EEA63FF00EDD88B /* CreateViewController.swift in Sources */,
 				407C21601EEA63FF00EDD88B /* AppDelegate.swift in Sources */,
+				4055D3F11EF3ACA0003BCEF9 /* TripDetailsViewController.swift in Sources */,
 				407C21881EEA71ED00EDD88B /* PigeonNavigationController.swift in Sources */,
 				407C21621EEA63FF00EDD88B /* ViewViewController.swift in Sources */,
 				407C21861EEA6C8200EDD88B /* PigeonColors.swift in Sources */,
