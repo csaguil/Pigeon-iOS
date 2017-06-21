@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  PigeonColors.swift
 //  Pigeon
 //
 //  Created by Cristian Saguil on 6/9/17.

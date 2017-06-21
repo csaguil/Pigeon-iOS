@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SettingsViewController.swift
 //  Pigeon
 //
 //  Created by Cristian Saguil on 6/9/17.
@@ -38,11 +38,18 @@ class SettingsViewController: PigeonViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         cell.backgroundColor = colors.darkGray()
+        cell.selectionStyle = .none
         var label: UILabel = cell.viewWithTag(1001) as! UILabel
         label.text = fields[indexPath.row]
         label.textColor = UIColor.white
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 1 {
+            self.performSegue(withIdentifier: "settingsToLegal", sender: nil)
+        }
     }
     
     

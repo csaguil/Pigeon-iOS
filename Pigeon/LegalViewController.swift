@@ -1,5 +1,5 @@
 //
-//  PigeonNavigationController.swift
+//  FirstViewController.swift
 //  Pigeon
 //
 //  Created by Cristian Saguil on 6/9/17.
@@ -8,20 +8,13 @@
 
 import UIKit
 
-class PigeonNavigationController: UINavigationController {
+class LegalViewController: PigeonViewController {
+    @IBOutlet var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let colors = PigeonColors()
-        self.navigationBar.barTintColor = colors.lightGray()
-        self.navigationBar.tintColor = colors.lightGreen()
-        
-        let logo = UIImage(named: "logo")
-        let imageView = UIImageView(image:logo)
-        self.navigationItem.titleView = imageView
-        self.navigationItem.title = "Pigeon"
-
+        self.textView.isEditable = false
     }
     
     override func didReceiveMemoryWarning() {

@@ -258,6 +258,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="tintColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="New Request"/>
+                                        <connections>
+                                            <action selector="newRequest:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Y5z-dU-PDN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nm8-Ex-3RS">
                                         <rect key="frame" x="15" y="0.0" width="345" height="64"/>
@@ -269,7 +272,7 @@
                                         <color key="tintColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="New Ride"/>
                                         <connections>
-                                            <segue destination="S0k-Kc-bf2" kind="show" id="5NX-7A-gqP"/>
+                                            <action selector="newRide:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="AiW-4K-t68"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -292,6 +295,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4Wh-on-lpi"/>
+                    <connections>
+                        <segue destination="S0k-Kc-bf2" kind="show" identifier="showYourDetails" id="8Ld-dt-3E8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -359,7 +365,7 @@
                                     <color key="titleColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="33d-Te-XDr" kind="show" id="AMT-VB-3AO"/>
+                                    <action selector="nextButtonPressed:" destination="S0k-Kc-bf2" eventType="touchUpInside" id="hjP-X3-JwF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -378,16 +384,17 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="qfm-D6-viF" id="74V-gG-gVZ"/>
+                        <segue destination="33d-Te-XDr" kind="show" identifier="showTripDetailsRide" id="JwQ-CW-8uT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RBg-I9-U8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2536.8000000000002" y="-387.25637181409297"/>
+            <point key="canvasLocation" x="2529" y="0.0"/>
         </scene>
-        <!--Trip Details View Controller-->
+        <!--Trip Details Ride View Controller-->
         <scene sceneID="pez-KK-eOV">
             <objects>
-                <viewController id="33d-Te-XDr" customClass="TripDetailsViewController" customModule="Pigeon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="33d-Te-XDr" customClass="TripDetailsRideViewController" customModule="Pigeon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pp6-tg-Dbb"/>
                         <viewControllerLayoutGuide type="bottom" id="sE6-Ti-H5p"/>
@@ -498,6 +505,54 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2003" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="piO-3L-Ipz">
+                                <rect key="frame" x="31" y="305" width="313" height="43"/>
+                                <color key="backgroundColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="GNn-yH-Js1"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vWR-D5-CIb">
+                                <rect key="frame" x="32" y="356" width="313" height="43"/>
+                                <color key="backgroundColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="bmd-BP-jA6"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2005" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Seats Available" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wyt-Of-Dq1">
+                                <rect key="frame" x="31" y="407" width="313" height="43"/>
+                                <color key="backgroundColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="eDM-C6-CHD"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsL-bK-vDO">
+                                <rect key="frame" x="15" y="546" width="345" height="64"/>
+                                <color key="backgroundColor" red="0.51764705879999995" green="0.90980392160000001" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Otl-fp-qYs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="List Ride">
+                                    <color key="titleColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="listRide:" destination="33d-Te-XDr" eventType="touchUpInside" id="9bq-7e-s7x"/>
+                                    <action selector="nextButtonPressed:" destination="S0k-Kc-bf2" eventType="touchUpInside" id="tdJ-hQ-Sup"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -505,13 +560,25 @@
                             <constraint firstAttribute="trailingMargin" secondItem="qap-o7-bFt" secondAttribute="trailing" constant="15" id="JLf-OM-539"/>
                             <constraint firstItem="Ni6-i9-Ip7" firstAttribute="leading" secondItem="Ke5-0D-3AI" secondAttribute="leadingMargin" constant="16" id="KPl-oY-knU"/>
                             <constraint firstItem="qap-o7-bFt" firstAttribute="top" secondItem="AMK-ZQ-yt3" secondAttribute="bottom" constant="19" id="LbD-1H-fFQ"/>
+                            <constraint firstItem="Wyt-Of-Dq1" firstAttribute="leading" secondItem="Ke5-0D-3AI" secondAttribute="leadingMargin" constant="15" id="Mfa-E0-ptG"/>
                             <constraint firstItem="Ni6-i9-Ip7" firstAttribute="top" secondItem="frg-Fx-CsT" secondAttribute="bottom" constant="8" id="NIN-v7-QBp"/>
                             <constraint firstItem="AMK-ZQ-yt3" firstAttribute="top" secondItem="Pp6-tg-Dbb" secondAttribute="bottom" constant="15" id="Q41-P4-AoG"/>
                             <constraint firstItem="qap-o7-bFt" firstAttribute="leading" secondItem="Ke5-0D-3AI" secondAttribute="leadingMargin" constant="15" id="Q4e-eL-lxd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ni6-i9-Ip7" secondAttribute="trailing" constant="14" id="T6X-hr-7GT"/>
+                            <constraint firstItem="vWR-D5-CIb" firstAttribute="leading" secondItem="Ke5-0D-3AI" secondAttribute="leadingMargin" constant="16" id="Uva-rw-V3h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wyt-Of-Dq1" secondAttribute="trailing" constant="15" id="WXd-G5-cJF"/>
+                            <constraint firstItem="sE6-Ti-H5p" firstAttribute="top" secondItem="VsL-bK-vDO" secondAttribute="bottom" constant="8" id="YnM-ph-rjf"/>
+                            <constraint firstItem="vWR-D5-CIb" firstAttribute="top" secondItem="piO-3L-Ipz" secondAttribute="bottom" constant="8" id="fV1-sT-G1u"/>
+                            <constraint firstItem="piO-3L-Ipz" firstAttribute="top" secondItem="Ni6-i9-Ip7" secondAttribute="bottom" constant="8" id="fsO-Zf-ApS"/>
                             <constraint firstItem="frg-Fx-CsT" firstAttribute="leading" secondItem="Ke5-0D-3AI" secondAttribute="leadingMargin" constant="15" id="mi7-fo-eCR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="piO-3L-Ipz" secondAttribute="trailing" constant="15" id="nBZ-wc-M5N"/>
+                            <constraint firstItem="VsL-bK-vDO" firstAttribute="leading" secondItem="Ke5-0D-3AI" secondAttribute="leading" constant="15" id="ng1-p3-7GX"/>
                             <constraint firstItem="frg-Fx-CsT" firstAttribute="top" secondItem="qap-o7-bFt" secondAttribute="bottom" constant="8" id="rwl-Xg-sN3"/>
+                            <constraint firstAttribute="trailing" secondItem="VsL-bK-vDO" secondAttribute="trailing" constant="15" id="tJm-6a-erM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="frg-Fx-CsT" secondAttribute="trailing" constant="15" id="v4J-1G-S57"/>
+                            <constraint firstItem="Wyt-Of-Dq1" firstAttribute="top" secondItem="vWR-D5-CIb" secondAttribute="bottom" constant="8" id="v8e-xN-iqZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vWR-D5-CIb" secondAttribute="trailing" constant="14" id="ws5-a1-Rvs"/>
+                            <constraint firstItem="piO-3L-Ipz" firstAttribute="leading" secondItem="Ke5-0D-3AI" secondAttribute="leadingMargin" constant="15" id="zUe-mJ-yL5"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -571,11 +638,66 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="k8W-az-tYR" id="TFr-sZ-6wr"/>
+                        <segue destination="gej-mW-gUp" kind="show" identifier="settingsToLegal" id="Zco-GL-N3k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZS-AT-Sud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1688.8" y="1037.6311844077961"/>
+        </scene>
+        <!--Legal View Controller-->
+        <scene sceneID="OYv-CC-kkI">
+            <objects>
+                <viewController id="gej-mW-gUp" customClass="LegalViewController" customModule="Pigeon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xMe-s2-0fr"/>
+                        <viewControllerLayoutGuide type="bottom" id="sqk-6x-IXY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BFY-vj-mJM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pcY-Y6-Q62">
+                                <rect key="frame" x="16" y="64" width="343" height="554"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Terms of Use 
+Effective: March 1, 2017
+1. Contractual Relationship
+By accessing or using Pigeon Carpooling (“Pigeon”), you agree that as a user of Pigeon, whether as a driver or as a passenger (“User”), to be bound by these Terms of Use (“Terms”). If you do not agree to these Terms, you may not access or use the Services, as defined below. These Terms expressly supersede prior agreements or arrangements with you. Pigeon may immediately terminate these Terms or any Services with respect to you, or generally cease offering or deny access to the Services or any portion thereof, at any time for any reason. Pigeon may amend the Terms from time to time. Amendments will be effective upon Pigeon posting such updated Terms at this location or in the amended policies or supplemental terms on the applicable Service(s). Your continued access or use of the Services after such posting confirms your consent to be bound by the Terms, as amended. If Pigeon changes these Terms after the date you first agreed to the Terms (or to any subsequent changes to these Terms), you may reject any such change by providing Pigeon a written notice of rejection within 30 days of the date such change became effective, as indicated in the "Effective" date above.
+
+
+2. The Services
+The Services comprise of mobile applications and online access via the Pigeon website (ridepigeon.com), which matches Users by enabling Users to arrange and schedule transportation and logistics between Users. The Services are made available solely for your personal, noncommercial use. You acknowledge that your use of the Services does not establish Pigeon as a provider of transportation, logistics or delivery services or as a transportation carrier. 
+
+Pigeon operates on Colgate University’s campus by running advertising campaigns and promoting brand awareness to the community. Business will be promoted in forms of posters and using the kiosk at the COOP. 
+
+Pigeon takes full responsibility for its brand and all aspects of operations on Colgate University’s campus. 
+
+Pigeon agrees to indemnify, defend and hold harmless Colgate University, its officers, employees and agents, against all claims, costs and liabilities incurred in connection with any injury or damage caused to any person or property arising as a result of its operations on the campus of Colgate University. 
+3. Disclaimers; Limitation of Liability
+Pigeon does not warranty or guarantee the quality, suitability, reliability, availability, or safety of the ride that is negotiated and agreed to using Pigeon. Pigeon does not warranty or guarantee the Users’ driving abilities, driving record, or insurance status. You agree that the entire risk arising out of your use of Pigeon, and any Service requested, remain solely with you.
+
+Pigeon shall not be liable for delay or failure in performance of Services resulting from causes beyond Pigeon’s reasonable control. Pigeon shall not be liable for any direct, indirect, incidental, special, exemplary, punitive, or consequential damages or losses, to Users of Pigeon’s Services, including, personal injury, loss of property, or property damage related to, in connection with, or otherwise arising from any use of Pigeon’s Services, regardless of the negligence of Pigeon, even if Pigeon has been advised of the possibility of such damages. Pigeon shall not be liable for any direct, indirect, incidental, special, exemplary, punitive, or consequential damages or losses for any third party that may be injured or damaged in connection with or otherwise arising from any use of Pigeon’s Services. You acknowledge that Pigeon provides transportation services through peer-to-peer interaction and drivers may not be professionally licensed, insured, or permitted.</mutableString>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pcY-Y6-Q62" firstAttribute="top" secondItem="xMe-s2-0fr" secondAttribute="bottom" id="6Kt-uh-HvA"/>
+                            <constraint firstItem="pcY-Y6-Q62" firstAttribute="leading" secondItem="BFY-vj-mJM" secondAttribute="leadingMargin" id="GEL-LS-fq9"/>
+                            <constraint firstItem="sqk-6x-IXY" firstAttribute="top" secondItem="pcY-Y6-Q62" secondAttribute="bottom" id="oc0-i8-We4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pcY-Y6-Q62" secondAttribute="trailing" id="wqf-TH-1F8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="pcY-Y6-Q62" id="MP8-Id-2Ku"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dKn-NQ-LQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2516" y="1038"/>
         </scene>
         <!--Pigeon Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -603,7 +725,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vw5-n9-t05" customClass="PigeonNavigationController" customModule="Pigeon" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="View" image="viewIcon" selectedImage="viewIconFilled" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UfO-iz-PzC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UfO-iz-PzC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -622,7 +744,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rho-Nb-q2Q" customClass="PigeonNavigationController" customModule="Pigeon" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Create" image="createIcon" selectedImage="createIconFilled" id="cPa-gy-q4n"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tjl-P1-7z5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tjl-P1-7z5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -641,7 +763,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fjd-7A-yln" customClass="PigeonNavigationController" customModule="Pigeon" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="settingsIcon" selectedImage="settingsIconFilled" id="C4W-AF-Jxy"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6St-Bm-f9E">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6St-Bm-f9E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

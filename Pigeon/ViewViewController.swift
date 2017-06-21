@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  ViewViewController.swift
 //  Pigeon
 //
 //  Created by Cristian Saguil on 6/9/17.
@@ -8,15 +8,6 @@
 
 import UIKit
 import RealmSwift
-
-final class Task: Object {
-    dynamic var text = ""
-    dynamic var completed = false
-}
-
-final class RideList: Object {
-    let items = List<Ride>()
-}
 
 final class Ride: Object {
     dynamic var firstName: String = ""
@@ -80,7 +71,7 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         // Log in existing user with username and password
         let username = "publicUser@mail.com"  // <--- Update this
         let password = "password"  // <--- Update this
-        SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false), server: URL(string: "http://127.0.0.1:9080")!) { user, error in
+        SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false), server: URL(string: "http://128.199.67.219:9080/")!) { user, error in
             guard let user = user else {
                 fatalError(String(describing: error))
             }
@@ -88,7 +79,7 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
             DispatchQueue.main.async {
                 // Open Realm
                 let configuration = Realm.Configuration(
-                    syncConfiguration: SyncConfiguration(user: user, realmURL: URL(string: "realm://127.0.0.1:9080/~/ridesharing")!)
+                    syncConfiguration: SyncConfiguration(user: user, realmURL: URL(string: "realm://128.199.67.219:9080/~/ridesharing")!)
                 )
                 Realm.asyncOpen(configuration: configuration) { realm, error in
                     if let realm = realm {
