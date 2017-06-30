@@ -187,6 +187,7 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
         try! self.realm.write {
             self.realm.add(self.createRideObject())
         }
+        self.performSegue(withIdentifier: "listRideThankYou", sender: nil)
     }
     
     

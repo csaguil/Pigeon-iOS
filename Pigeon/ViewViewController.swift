@@ -73,7 +73,7 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         let password = "password"  // <--- Update this
         SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false), server: URL(string: "http://128.199.67.219:9080/")!) { user, error in
             guard let user = user else {
-                fatalError(String(describing: error))
+                return
             }
             
             DispatchQueue.main.async {

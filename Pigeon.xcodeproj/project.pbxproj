@@ -28,6 +28,7 @@
 		4084E9E71EEFA62500D3219C /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4084E9E41EEFA62500D3219C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4084E9E81EEFA62500D3219C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4084E9E51EEFA62500D3219C /* RealmSwift.framework */; };
 		4084E9E91EEFA62500D3219C /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4084E9E51EEFA62500D3219C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		40B800311EFCCEEA00938ECA /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B800301EFCCEEA00938ECA /* ThankYouViewController.swift */; };
 		40C963201EFA477500735BF1 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C9631F1EFA477500735BF1 /* LegalViewController.swift */; };
 		968E18DFCD5EEA64185054D2 /* Pods_PigeonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826D54209D801B46D5E7EB7E /* Pods_PigeonTests.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		407C218D1EEA89C700EDD88B /* NewRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRequestViewController.swift; sourceTree = "<group>"; };
 		4084E9E41EEFA62500D3219C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		4084E9E51EEFA62500D3219C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		40B800301EFCCEEA00938ECA /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		40BF235C1EEFA36400A4711D /* Pigeon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pigeon.entitlements; sourceTree = "<group>"; };
 		40C9631F1EFA477500735BF1 /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
 		826D54209D801B46D5E7EB7E /* Pods_PigeonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PigeonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 				407C21631EEA63FF00EDD88B /* CreateViewController.swift */,
 				407C21811EEA662500EDD88B /* SettingsViewController.swift */,
 				407C21651EEA63FF00EDD88B /* Main.storyboard */,
+				40B800301EFCCEEA00938ECA /* ThankYouViewController.swift */,
 				40C9631F1EFA477500735BF1 /* LegalViewController.swift */,
 				407C218B1EEA89AE00EDD88B /* YourDetailsViewController.swift */,
 				407C218D1EEA89C700EDD88B /* NewRequestViewController.swift */,
@@ -400,6 +403,7 @@
 				407C21641EEA63FF00EDD88B /* CreateViewController.swift in Sources */,
 				407C21601EEA63FF00EDD88B /* AppDelegate.swift in Sources */,
 				4055D3F11EF3ACA0003BCEF9 /* TripDetailsRideViewController.swift in Sources */,
+				40B800311EFCCEEA00938ECA /* ThankYouViewController.swift in Sources */,
 				40C963201EFA477500735BF1 /* LegalViewController.swift in Sources */,
 				407C21881EEA71ED00EDD88B /* PigeonNavigationController.swift in Sources */,
 				407C21621EEA63FF00EDD88B /* ViewViewController.swift in Sources */,

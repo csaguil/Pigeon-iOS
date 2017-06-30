@@ -581,10 +581,58 @@
                             <constraint firstItem="piO-3L-Ipz" firstAttribute="leading" secondItem="Ke5-0D-3AI" secondAttribute="leadingMargin" constant="15" id="zUe-mJ-yL5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="pUw-bF-Oj0" kind="presentation" identifier="listRideThankYou" id="uvH-Ej-mXx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPY-Ai-5m5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3324" y="-386.35682158920542"/>
+        </scene>
+        <!--Thank You View Controller-->
+        <scene sceneID="CCy-5c-bYE">
+            <objects>
+                <viewController id="pUw-bF-Oj0" customClass="ThankYouViewController" customModule="Pigeon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fQj-1A-luy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pfg-un-1B7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RXq-qA-1wf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your ride listing is pending approval. Please check back in a few hours to see if your ride was approved" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzP-Vt-R2j">
+                                <rect key="frame" x="16" y="119" width="343" height="124.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dc0-rw-khs">
+                                <rect key="frame" x="142" y="603" width="91" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="DZW-uG-KKM"/>
+                                    <constraint firstAttribute="height" constant="44" id="rVG-Jn-yEo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Dismiss"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="pUw-bF-Oj0" eventType="touchUpInside" id="Vw2-Ci-tIZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fzP-Vt-R2j" firstAttribute="leading" secondItem="RXq-qA-1wf" secondAttribute="leadingMargin" id="QJs-e0-twl"/>
+                            <constraint firstItem="Pfg-un-1B7" firstAttribute="top" secondItem="dc0-rw-khs" secondAttribute="bottom" constant="20" id="QqP-Go-x5Q"/>
+                            <constraint firstItem="fzP-Vt-R2j" firstAttribute="top" secondItem="fQj-1A-luy" secondAttribute="bottom" constant="99" id="coF-Cr-WeC"/>
+                            <constraint firstItem="fzP-Vt-R2j" firstAttribute="trailing" secondItem="RXq-qA-1wf" secondAttribute="trailingMargin" id="jiT-iA-pQB"/>
+                            <constraint firstItem="dc0-rw-khs" firstAttribute="centerX" secondItem="RXq-qA-1wf" secondAttribute="centerX" id="nQo-Ha-wgD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7aZ-dq-vAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4069.5999999999999" y="-382.75862068965517"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="2rv-d7-tnr">
@@ -660,7 +708,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pcY-Y6-Q62">
                                 <rect key="frame" x="16" y="64" width="343" height="554"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Terms of Use 
+                                <string key="text">Terms of Use 
 Effective: March 1, 2017
 1. Contractual Relationship
 By accessing or using Pigeon Carpooling (“Pigeon”), you agree that as a user of Pigeon, whether as a driver or as a passenger (“User”), to be bound by these Terms of Use (“Terms”). If you do not agree to these Terms, you may not access or use the Services, as defined below. These Terms expressly supersede prior agreements or arrangements with you. Pigeon may immediately terminate these Terms or any Services with respect to you, or generally cease offering or deny access to the Services or any portion thereof, at any time for any reason. Pigeon may amend the Terms from time to time. Amendments will be effective upon Pigeon posting such updated Terms at this location or in the amended policies or supplemental terms on the applicable Service(s). Your continued access or use of the Services after such posting confirms your consent to be bound by the Terms, as amended. If Pigeon changes these Terms after the date you first agreed to the Terms (or to any subsequent changes to these Terms), you may reject any such change by providing Pigeon a written notice of rejection within 30 days of the date such change became effective, as indicated in the "Effective" date above.
@@ -677,7 +725,7 @@ Pigeon agrees to indemnify, defend and hold harmless Colgate University, its off
 3. Disclaimers; Limitation of Liability
 Pigeon does not warranty or guarantee the quality, suitability, reliability, availability, or safety of the ride that is negotiated and agreed to using Pigeon. Pigeon does not warranty or guarantee the Users’ driving abilities, driving record, or insurance status. You agree that the entire risk arising out of your use of Pigeon, and any Service requested, remain solely with you.
 
-Pigeon shall not be liable for delay or failure in performance of Services resulting from causes beyond Pigeon’s reasonable control. Pigeon shall not be liable for any direct, indirect, incidental, special, exemplary, punitive, or consequential damages or losses, to Users of Pigeon’s Services, including, personal injury, loss of property, or property damage related to, in connection with, or otherwise arising from any use of Pigeon’s Services, regardless of the negligence of Pigeon, even if Pigeon has been advised of the possibility of such damages. Pigeon shall not be liable for any direct, indirect, incidental, special, exemplary, punitive, or consequential damages or losses for any third party that may be injured or damaged in connection with or otherwise arising from any use of Pigeon’s Services. You acknowledge that Pigeon provides transportation services through peer-to-peer interaction and drivers may not be professionally licensed, insured, or permitted.</mutableString>
+Pigeon shall not be liable for delay or failure in performance of Services resulting from causes beyond Pigeon’s reasonable control. Pigeon shall not be liable for any direct, indirect, incidental, special, exemplary, punitive, or consequential damages or losses, to Users of Pigeon’s Services, including, personal injury, loss of property, or property damage related to, in connection with, or otherwise arising from any use of Pigeon’s Services, regardless of the negligence of Pigeon, even if Pigeon has been advised of the possibility of such damages. Pigeon shall not be liable for any direct, indirect, incidental, special, exemplary, punitive, or consequential damages or losses for any third party that may be injured or damaged in connection with or otherwise arising from any use of Pigeon’s Services. You acknowledge that Pigeon provides transportation services through peer-to-peer interaction and drivers may not be professionally licensed, insured, or permitted.</string>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -698,6 +746,42 @@ Pigeon shall not be liable for delay or failure in performance of Services resul
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKn-NQ-LQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2516" y="1038"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xX4-9w-vFJ">
+            <objects>
+                <viewController id="vQK-cz-p4H" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="adx-Ox-LdZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="rz7-g4-AXv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XtZ-Wv-hYU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="02t-pA-d6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-863" y="-291"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fFc-4k-AOm">
+            <objects>
+                <viewController id="Zk0-aj-AM1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Vc-0a-Jn6"/>
+                        <viewControllerLayoutGuide type="bottom" id="ymU-OO-BXs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p1x-yn-zlH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uCG-bQ-fWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-862" y="424"/>
         </scene>
         <!--Pigeon Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
