@@ -9,29 +9,6 @@
 import UIKit
 import RealmSwift
 
-final class Ride: Object {
-    dynamic var firstName: String = ""
-    dynamic var lastName: String = ""
-    dynamic var email: String = ""
-    dynamic var phone: String = ""
-    dynamic var origin: String = ""
-    dynamic var destination: String = ""
-    dynamic var date: String = ""
-    dynamic var time: String = ""
-    dynamic var seats: Int = 0
-}
-
-final class Request: Object {
-    dynamic var firstName: String = ""
-    dynamic var lastName: String = ""
-    dynamic var email: String = ""
-    dynamic var phone: String = ""
-    dynamic var origin: String = ""
-    dynamic var destination: String = ""
-    dynamic var date: String = ""
-    dynamic var time: String = ""
-}
-
 class ViewViewController: PigeonViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var buttonRides: UIButton!
     @IBOutlet var buttonRequests: UIButton!
@@ -64,7 +41,11 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             let destinationVC = segue.destination as! ItemDetailViewController
-            destinationVC.ride = self.realm.objects(Ride.self)[selectedRow]
+            if ridesToggled {
+                destinationVC.ride = self.realm.objects(RideListing.self)[selectedRow]
+            } else {
+                destinationVC.request = self.realm.objects(RequestListing.self)[selectedRow]
+            }
         }
     }
     
@@ -78,9 +59,9 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     }
     
     func setupRealm(){
-        // Log in existing user with username and password
-        let username = "publicUser@mail.com"  // <--- Update this
-        let password = "password"  // <--- Update this
+        // Log in using public username and password
+        let username = "publicUser@mail.com"
+        let password = "password"
         SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false), server: URL(string: "http://128.199.67.219:9080/")!) { user, error in
             guard let user = user else {
                 return
@@ -113,8 +94,8 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.realm != nil{
-            if ridesToggled { return self.realm.objects(Ride.self).count }
-            else { return self.realm.objects(Request.self).count }
+            if ridesToggled { return self.realm.objects(RideListing.self).count }
+            else { return self.realm.objects(RequestListing.self).count }
         } else {
             return 0
         }
@@ -131,13 +112,13 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
             let time: UILabel = cell.viewWithTag(1003) as! UILabel
             
             if ridesToggled {
-                let ride: Ride = self.realm.objects(Ride.self)[indexPath.row]
+                let ride: RideListing = self.realm.objects(RideListing.self)[indexPath.row]
                 originTitle.text = ride.origin
                 destTitle.text = ride.destination
                 date.text = ride.date
                 time.text = ride.time
             } else {
-                let request: Request = self.realm.objects(Request.self)[indexPath.row]
+                let request: RequestListing = self.realm.objects(RequestListing.self)[indexPath.row]
                 originTitle.text = request.origin
                 destTitle.text = request.destination
                 date.text = request.date

@@ -22,15 +22,12 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
     var seatsField = UITextField()
     var finishButton = UIButton()
     var objectData = Dictionary<String, String>()
-    var notificationToken: NotificationToken!
-    var realm: Realm!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        setupRealm()
         setupUI()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TripDetailsRideViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
     
@@ -47,6 +44,9 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
     }
     
     func setupUI() {
+        //Momentarily disable finish button to allow time for realm to open
+        self.finishButton.isEnabled = false
+        
         //Define views
         let radioButtonContainer = self.view.viewWithTag(1)!
         let green1 = radioButtonContainer.viewWithTag(1001)!
@@ -95,32 +95,6 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
         green2.addGestureRecognizer(tap2)
         
         toggleLeavingFrom()
-    }
-    
-    func setupRealm(){
-        // Log in existing user with username and password
-        let username = "publicUser@mail.com"  // <--- Update this
-        let password = "password"  // <--- Update this
-        SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false), server: URL(string: "http://128.199.67.219:9080/")!) { user, error in
-            guard let user = user else {
-                fatalError(String(describing: error))
-            }
-            
-            DispatchQueue.main.async {
-                // Open Realm
-                let configuration = Realm.Configuration(
-                    syncConfiguration: SyncConfiguration(user: user, realmURL: URL(string: "realm://128.199.67.219:9080/~/ridesharing")!)
-                )
-                Realm.asyncOpen(configuration: configuration) { realm, error in
-                    if let realm = realm {
-                        // Realm successfully opened, with all remote data available
-                        self.realm = realm
-                    }
-                    
-                }
-            }
-        }
-        
     }
     
     func getKey(string: String) -> String {
@@ -172,8 +146,8 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
         view.endEditing(true)
     }
     
-    func createRideObject() -> Ride {
-        let ride = Ride()
+    func createRideListing() -> RideListing {
+        let ride = RideListing()
         if objectData["firstName"] != nil {
             ride.firstName = objectData["firstName"]!
         }
@@ -202,8 +176,8 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
         return ride
     }
     
-    func createRequestObject() -> Request {
-        let request = Request()
+    func createRequestListing() -> RequestListing {
+        let request = RequestListing()
         if objectData["firstName"] != nil {
             request.firstName = objectData["firstName"]!
         }
@@ -233,16 +207,37 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
     }
     
     @IBAction func listRide(_ sender: Any) {
-        try! self.realm.write {
-            if isRide {
-                self.realm.add(self.createRideObject())
-            } else {
-                self.realm.add(self.createRequestObject())
+        // Log in existing user with username and password
+        let username = "publicUser@mail.com"  // <--- Update this
+        let password = "password"  // <--- Update this
+        SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false), server: URL(string: "http://128.199.67.219:9080/")!) { user, error in
+            guard let user = user else {
+                fatalError(String(describing: error))
+            }
+            
+            DispatchQueue.main.async {
+                // Open Realm
+                let configuration = Realm.Configuration(
+                    syncConfiguration: SyncConfiguration(user: user, realmURL: URL(string: "realm://128.199.67.219:9080/~/ridesharing")!)
+                )
+                Realm.asyncOpen(configuration: configuration) { realm, error in
+                    if let realm = realm {
+                        // Realm successfully opened, with all remote data available
+                        try! realm.write {
+                            if self.isRide {
+                                realm.add(self.createRideListing())
+                            } else {
+                                realm.add(self.createRequestListing())
+                            }
+                        }
+                        self.performSegue(withIdentifier: "ThankYouSegue", sender: nil)
+                    }
+                    
+                }
             }
         }
-        self.performSegue(withIdentifier: "ThankYouSegue", sender: nil)
+        
     }
-    
     
 }
 

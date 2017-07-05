@@ -75,6 +75,7 @@ class YourDetailsViewController: PigeonViewController, UITableViewDelegate, UITa
         textField.attributedPlaceholder = NSAttributedString(string: fields[indexPath.row],
                                                              attributes: [NSForegroundColorAttributeName: UIColor.lightGray])
         
+        //Moving textfields leftward
         let spacerView = UIView(frame:CGRect(x:0, y:0, width:10, height:10))
         textField.leftViewMode = UITextFieldViewMode.always
         textField.leftView = spacerView
