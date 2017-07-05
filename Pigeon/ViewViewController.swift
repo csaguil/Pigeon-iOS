@@ -21,11 +21,23 @@ final class Ride: Object {
     dynamic var seats: Int = 0
 }
 
+final class Request: Object {
+    dynamic var firstName: String = ""
+    dynamic var lastName: String = ""
+    dynamic var email: String = ""
+    dynamic var phone: String = ""
+    dynamic var origin: String = ""
+    dynamic var destination: String = ""
+    dynamic var date: String = ""
+    dynamic var time: String = ""
+}
+
 class ViewViewController: PigeonViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var buttonRides: UIButton!
     @IBOutlet var buttonRequests: UIButton!
     @IBOutlet var tableView: UITableView!
-    var selected = 0
+    var selectedRow = 0
+    var ridesToggled = true
     
     var notificationToken: NotificationToken!
     var realm: Realm!
@@ -52,7 +64,7 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             let destinationVC = segue.destination as! ItemDetailViewController
-            destinationVC.ride = self.realm.objects(Ride.self)[selected]
+            destinationVC.ride = self.realm.objects(Ride.self)[selectedRow]
         }
     }
     
@@ -61,8 +73,6 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         self.buttonRequests.layer.borderWidth = 1.0
         self.buttonRides.layer.borderColor = colors.lightGray().cgColor
         self.buttonRequests.layer.borderColor = colors.lightGray().cgColor
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
         
         self.toggleRides(self)
     }
@@ -99,9 +109,12 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
 
     }
     
+    // MARK: UITableView Methods
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.realm != nil{
-            return self.realm.objects(Ride.self).count
+            if ridesToggled { return self.realm.objects(Ride.self).count }
+            else { return self.realm.objects(Request.self).count }
         } else {
             return 0
         }
@@ -112,16 +125,24 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         cell.backgroundColor = colors.darkGray()
         cell.selectionStyle = .none
         if self.realm != nil {
-            let ride: Ride = self.realm.objects(Ride.self)[indexPath.row]
-        
             let originTitle: UILabel = cell.viewWithTag(2001) as! UILabel
             let destTitle: UILabel = cell.viewWithTag(2002) as! UILabel
             let date: UILabel = cell.viewWithTag(1002) as! UILabel
             let time: UILabel = cell.viewWithTag(1003) as! UILabel
-            originTitle.text = ride.origin
-            destTitle.text = ride.destination
-            date.text = ride.date
-            time.text = ride.time
+            
+            if ridesToggled {
+                let ride: Ride = self.realm.objects(Ride.self)[indexPath.row]
+                originTitle.text = ride.origin
+                destTitle.text = ride.destination
+                date.text = ride.date
+                time.text = ride.time
+            } else {
+                let request: Request = self.realm.objects(Request.self)[indexPath.row]
+                originTitle.text = request.origin
+                destTitle.text = request.destination
+                date.text = request.date
+                time.text = request.time
+            }
         }
         return cell
     }
@@ -131,12 +152,13 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selected = indexPath.row
+        selectedRow = indexPath.row
         self.performSegue(withIdentifier: "showDetail", sender: nil)
     }
-
+    
+    // MARK: Functions
     @IBAction func toggleRides(_ sender: Any) {
-        print("Rides")
+        ridesToggled = true
         buttonRides.backgroundColor = colors.lightGreen()
         buttonRequests.backgroundColor = UIColor.lightGray
         
@@ -145,7 +167,7 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         self.tableView.reloadData()
     }
     @IBAction func toggleRequests(_ sender: Any) {
-        print("Requests")
+        ridesToggled = false
         buttonRides.backgroundColor = UIColor.lightGray
         buttonRequests.backgroundColor = colors.lightGreen()
         
@@ -154,35 +176,7 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         self.tableView.reloadData()
     }
     
-    // MARK: Functions
-    
-    func add() {
-        let alertController = UIAlertController(title: "New Ride", message: "Enter Ride Details", preferredStyle: .alert)
-        var originTextField: UITextField!
-        var destinationTextField: UITextField!
-        
-        alertController.addTextField { textField in
-            originTextField = textField
-            textField.placeholder = "Origin"
-            
-        }
-        
-        alertController.addTextField { textField in
-            destinationTextField = textField
-            textField.placeholder = "Destination"
-            
-        }
-        
-        alertController.addAction(UIAlertAction(title: "Add", style: .default) { _ in
-            guard let origin = originTextField.text , !origin.isEmpty else { return }
-            guard let destination = destinationTextField.text , !destination.isEmpty else { return }
-            let ride = Ride(value: ["origin": origin, "destination": destination])
-            try! self.realm.write {
-                self.realm.add(ride)
-            }
-            self.tableView.reloadData()
-        })
-        present(alertController, animated: true, completion: nil)
+    @IBAction func unwindToViewRidesRequests(segue: UIStoryboardSegue) {
         
     }
 

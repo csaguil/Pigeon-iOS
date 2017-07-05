@@ -20,18 +20,18 @@
 		184FA71D6529E991C9DAD7A8208C620A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		195A2630BB885C27706319ECDD8A7CC3 /* Pods-PigeonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PigeonTests.release.xcconfig"; sourceTree = "<group>"; };
 		19B6CE35F083B29E78B8D24CA0991877 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		292C1BE59CAA180E01850D3FB164DF7B /* Pods-Pigeon.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Pigeon.modulemap"; sourceTree = "<group>"; };
+		292C1BE59CAA180E01850D3FB164DF7B /* Pods-Pigeon.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Pigeon.modulemap"; sourceTree = "<group>"; };
 		36F13D9DA3256C11E0DB7C195D06FF0E /* Pods-Pigeon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pigeon.release.xcconfig"; sourceTree = "<group>"; };
 		3A60A848C0393C407A348E12203DF6DA /* Pods-PigeonTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PigeonTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		598B18CF1ED3460DFEE74E683E4349F3 /* Pods-PigeonTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PigeonTests-frameworks.sh"; sourceTree = "<group>"; };
 		59CFC433D43F41E4DCB20B19761CBFF5 /* Pods-Pigeon-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pigeon-resources.sh"; sourceTree = "<group>"; };
-		5C4CACA16E4F9CFB59B00039765B5B82 /* Pods_PigeonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PigeonTests.framework; path = "Pods-PigeonTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C4CACA16E4F9CFB59B00039765B5B82 /* Pods_PigeonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PigeonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CE68AF6601DE08B25E969FEE3778BE9 /* Pods-Pigeon-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Pigeon-acknowledgements.plist"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		70324FDF1FBB41BEA92DE76E00BD3E96 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
 		708D9DD07DB9237E980C0BD2ABD9F743 /* Pods-PigeonTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PigeonTests-resources.sh"; sourceTree = "<group>"; };
 		79DBB1C0E52E18D491BAF020A142AB0F /* Pods-PigeonTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PigeonTests-umbrella.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9912FA856A75F341CD6A7634A2732146 /* Pods-Pigeon-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Pigeon-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A56E95BEFDF60EE0C0B9B346F2496C2B /* Pods-Pigeon-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pigeon-frameworks.sh"; sourceTree = "<group>"; };
 		A92DFDA40F47C0FD221B2872C31099A1 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
@@ -42,9 +42,9 @@
 		D1560510C2FCBAA06782C16247CF6D26 /* Pods-PigeonTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PigeonTests-dummy.m"; sourceTree = "<group>"; };
 		E504839340929D6568A4E299B9168175 /* Pods-PigeonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PigeonTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EC32FDA5F21C87FF764EE6397626CA69 /* Pods-PigeonTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PigeonTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		F39C15B2B1DFAC3F996ED53BC685A33B /* Pods_Pigeon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Pigeon.framework; path = "Pods-Pigeon.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F39C15B2B1DFAC3F996ED53BC685A33B /* Pods_Pigeon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pigeon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F69E2FA66EA3C96EBDB532DE4A651406 /* Pods-Pigeon-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pigeon-umbrella.h"; sourceTree = "<group>"; };
-		F7620D51748997226C2131FCBE92D927 /* Pods-PigeonTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PigeonTests.modulemap"; sourceTree = "<group>"; };
+		F7620D51748997226C2131FCBE92D927 /* Pods-PigeonTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PigeonTests.modulemap"; sourceTree = "<group>"; };
 		F88E2A6AB865C2A1EB845B27A14348FA /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +74,6 @@
 				475420FA59EFC8377CF994A338979247 /* Frameworks */,
 				4F6C8AC648A5703DF2BEC96A882D19E9 /* Resources */,
 			);
-			name = GooglePlaces;
 			path = GooglePlaces;
 			sourceTree = "<group>";
 		};
@@ -93,7 +92,6 @@
 				B2F22323EA3B1ADB4F96376E3F709A68 /* Base */,
 				488E301C4ACDDA928635C4886F5F6158 /* Maps */,
 			);
-			name = GoogleMaps;
 			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
