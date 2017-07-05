@@ -37,6 +37,7 @@ class YourDetailsViewController: PigeonViewController, UITableViewDelegate, UITa
         if segue.identifier == "showTripDetailsRide" {
             let destinationVC = segue.destination as! TripDetailsRideViewController
             destinationVC.objectData = self.objectData
+            destinationVC.isRide = self.isRide
         }
     }
     
@@ -96,9 +97,7 @@ class YourDetailsViewController: PigeonViewController, UITableViewDelegate, UITa
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        if isRide {
-            self.performSegue(withIdentifier: "showTripDetailsRide", sender: nil)
-        }
+            self.performSegue(withIdentifier: "showTripDetailsRide", sender: self)
     }
     
     

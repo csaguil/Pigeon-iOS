@@ -11,6 +11,8 @@ import RealmSwift
 
 class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDelegate, UITextFieldDelegate {
     
+    var isRide = true
+    
     var indicator1 = UIView()
     var indicator2 = UIView()
     var originField = UITextField()
@@ -18,6 +20,7 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
     var dateField = UITextField()
     var timeField = UITextField()
     var seatsField = UITextField()
+    var finishButton = UIButton()
     var objectData = Dictionary<String, String>()
     var notificationToken: NotificationToken!
     var realm: Realm!
@@ -34,6 +37,64 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ThankYouSegue" {
+            let destinationVC = segue.destination as! ThankYouViewController
+            destinationVC.isRide = self.isRide
+        }
+    }
+    
+    func setupUI() {
+        //Define views
+        let radioButtonContainer = self.view.viewWithTag(1)!
+        let green1 = radioButtonContainer.viewWithTag(1001)!
+        let green2 = radioButtonContainer.viewWithTag(1002)!
+        self.indicator1 = (green1.viewWithTag(0))!
+        self.indicator2 = (green2.viewWithTag(0))!
+        self.originField = self.view.viewWithTag(2001) as! UITextField
+        self.destField = self.view.viewWithTag(2002) as! UITextField
+        self.dateField = self.view.viewWithTag(2003) as! UITextField
+        self.timeField = self.view.viewWithTag(2004) as! UITextField
+        self.seatsField = self.view.viewWithTag(2005) as! UITextField
+        self.finishButton = self.view.viewWithTag(3001) as! UIButton
+        
+        //setup delegates
+        self.originField.delegate = self
+        self.destField.delegate = self
+        self.dateField.delegate = self
+        self.timeField.delegate = self
+        self.seatsField.delegate = self
+        
+        //update controller for ride or request
+        if isRide { self.finishButton.setTitle("List Ride", for: UIControlState.normal) }
+        else {
+            self.finishButton.setTitle("Post Request", for: UIControlState.normal)
+            self.seatsField.isHidden = true
+        }
+        
+        //Textfield setup
+        //        let spacerView = UIView(frame:CGRect(x:0, y:0, width:10, height:10))
+        //        self.originField.leftViewMode = UITextFieldViewMode.always
+        //        self.destField.leftViewMode = UITextFieldViewMode.always
+        //        self.originField.leftView = spacerView
+        //        self.destField.leftView = spacerView
+        
+        //Radio button setup
+        green1.layer.cornerRadius = 12.0
+        green2.layer.cornerRadius = 12.0
+        self.indicator1.layer.cornerRadius = 5.0
+        self.indicator2.layer.cornerRadius = 5.0
+        
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(TripDetailsRideViewController.toggleLeavingFrom))
+        tap1.delegate = self as UIGestureRecognizerDelegate
+        green1.addGestureRecognizer(tap1)
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(TripDetailsRideViewController.toggleGoingTo))
+        tap2.delegate = self as UIGestureRecognizerDelegate
+        green2.addGestureRecognizer(tap2)
+        
+        toggleLeavingFrom()
     }
     
     func setupRealm(){
@@ -82,48 +143,6 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
         self.objectData[self.getKey(string: textField.placeholder!)] = textField.text
         print(self.objectData)
     }
-    
-    func setupUI() {
-        //Define views
-        let radioButtonContainer = self.view.viewWithTag(1)!
-        let green1 = radioButtonContainer.viewWithTag(1001)!
-        let green2 = radioButtonContainer.viewWithTag(1002)!
-        self.indicator1 = (green1.viewWithTag(0))!
-        self.indicator2 = (green2.viewWithTag(0))!
-        self.originField = self.view.viewWithTag(2001) as! UITextField
-        self.destField = self.view.viewWithTag(2002) as! UITextField
-        self.dateField = self.view.viewWithTag(2003) as! UITextField
-        self.timeField = self.view.viewWithTag(2004) as! UITextField
-        self.seatsField = self.view.viewWithTag(2005) as! UITextField
-        self.originField.delegate = self
-        self.destField.delegate = self
-        self.dateField.delegate = self
-        self.timeField.delegate = self
-        self.seatsField.delegate = self
-        
-        //Textfield setup
-//        let spacerView = UIView(frame:CGRect(x:0, y:0, width:10, height:10))
-//        self.originField.leftViewMode = UITextFieldViewMode.always
-//        self.destField.leftViewMode = UITextFieldViewMode.always
-//        self.originField.leftView = spacerView
-//        self.destField.leftView = spacerView
-
-        //Radio button setup
-        green1.layer.cornerRadius = 12.0
-        green2.layer.cornerRadius = 12.0
-        self.indicator1.layer.cornerRadius = 5.0
-        self.indicator2.layer.cornerRadius = 5.0
-        
-        let tap1 = UITapGestureRecognizer(target: self, action: #selector(TripDetailsRideViewController.toggleLeavingFrom))
-        tap1.delegate = self as UIGestureRecognizerDelegate
-        green1.addGestureRecognizer(tap1)
-        let tap2 = UITapGestureRecognizer(target: self, action: #selector(TripDetailsRideViewController.toggleGoingTo))
-        tap2.delegate = self as UIGestureRecognizerDelegate
-        green2.addGestureRecognizer(tap2)
-
-        toggleLeavingFrom()
-    }
-    
     
     func toggleLeavingFrom() {
         self.indicator1.isHidden = false
@@ -183,11 +202,45 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
         return ride
     }
     
+    func createRequestObject() -> Request {
+        let request = Request()
+        if objectData["firstName"] != nil {
+            request.firstName = objectData["firstName"]!
+        }
+        if objectData["lastName"] != nil {
+            request.lastName = objectData["lastName"]!
+        }
+        if objectData["email"] != nil {
+            request.email = objectData["email"]!
+        }
+        if objectData["phone"] != nil {
+            request.phone = objectData["phone"]!
+        }
+        if objectData["origin"] != nil {
+            request.origin = objectData["origin"]!
+        }
+        if objectData["destination"] != nil {
+            request.destination = objectData["destination"]!
+        }
+        if objectData["date"] != nil {
+            request.date = objectData["date"]!
+        }
+        if objectData["time"] != nil {
+            request.time = objectData["time"]!
+        }
+        
+        return request
+    }
+    
     @IBAction func listRide(_ sender: Any) {
         try! self.realm.write {
-            self.realm.add(self.createRideObject())
+            if isRide {
+                self.realm.add(self.createRideObject())
+            } else {
+                self.realm.add(self.createRequestObject())
+            }
         }
-        self.performSegue(withIdentifier: "listRideThankYou", sender: nil)
+        self.performSegue(withIdentifier: "ThankYouSegue", sender: nil)
     }
     
     

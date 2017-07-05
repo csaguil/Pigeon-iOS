@@ -10,6 +10,9 @@ import UIKit
 
 class ThankYouViewController: PigeonViewController {
     
+    var message = UILabel()
+    var isRide = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,7 +25,12 @@ class ThankYouViewController: PigeonViewController {
     }
     
     func setupUI() {
-        
+        message = self.view.viewWithTag(1001) as! UILabel
+        if isRide {
+            message.text = "Your ride listing is pending approval. Please check back in a few hours to see if your ride was approved"
+        } else {
+            message.text = "Your request for a ride is pending approval. Please check back in a few hours to see if your request was approved"
+        }
     }
     
     @IBAction func dismiss(_ sender: Any) {
