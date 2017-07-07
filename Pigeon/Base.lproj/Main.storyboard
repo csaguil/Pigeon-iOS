@@ -199,36 +199,41 @@
                                 <color key="textColor" red="1" green="1" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view tag="4001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Swc-NS-QdB" customClass="GMSMapView">
-                                <rect key="frame" x="15" y="196" width="345" height="345"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="4001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNW-2B-GyO">
+                                <rect key="frame" x="15" y="546" width="345" height="64"/>
+                                <color key="backgroundColor" red="0.51764705879999995" green="0.90980392160000001" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="345" id="rsL-9a-8iL"/>
+                                    <constraint firstAttribute="height" constant="64" id="llt-y6-qKQ"/>
                                 </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Request Ride">
+                                    <color key="titleColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishPressed:" destination="fc4-uT-jsu" eventType="touchUpInside" id="ANK-d4-Gjv"/>
+                                    <action selector="nextButtonPressed:" destination="S0k-Kc-bf2" eventType="touchUpInside" id="5yB-Yv-CSs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cgO-5b-Pvh" firstAttribute="leading" secondItem="33M-9O-DGF" secondAttribute="trailing" constant="30" id="9Iq-nB-7ur"/>
                             <constraint firstItem="HC8-ym-3md" firstAttribute="leading" secondItem="lwP-Sw-A8E" secondAttribute="trailing" constant="5" id="CPH-1P-lkB"/>
                             <constraint firstItem="lwP-Sw-A8E" firstAttribute="top" secondItem="DHm-ys-xm5" secondAttribute="bottom" constant="15" id="FHJ-cP-PLJ"/>
+                            <constraint firstItem="89f-Le-RAM" firstAttribute="top" secondItem="pNW-2B-GyO" secondAttribute="bottom" constant="8" id="FTn-nu-ZC7"/>
                             <constraint firstItem="fm0-BO-I7j" firstAttribute="leading" secondItem="PIj-UR-ptc" secondAttribute="leading" constant="15" id="Jux-uN-Rje"/>
+                            <constraint firstItem="pNW-2B-GyO" firstAttribute="leading" secondItem="PIj-UR-ptc" secondAttribute="leading" constant="15" id="L2N-tk-fgH"/>
                             <constraint firstItem="ILk-kJ-iN8" firstAttribute="top" secondItem="DHm-ys-xm5" secondAttribute="bottom" constant="15" id="R6t-DR-T6M"/>
-                            <constraint firstAttribute="trailing" secondItem="Swc-NS-QdB" secondAttribute="trailing" constant="15" id="V8b-pB-Qva"/>
                             <constraint firstItem="33M-9O-DGF" firstAttribute="top" secondItem="lwP-Sw-A8E" secondAttribute="bottom" constant="15" id="W0r-N4-Dz7"/>
                             <constraint firstItem="lwP-Sw-A8E" firstAttribute="leading" secondItem="PIj-UR-ptc" secondAttribute="leadingMargin" id="dxO-7h-gsh"/>
-                            <constraint firstItem="Swc-NS-QdB" firstAttribute="leading" secondItem="PIj-UR-ptc" secondAttribute="leading" constant="15" id="gtk-1j-Kbv"/>
                             <constraint firstItem="HC8-ym-3md" firstAttribute="top" secondItem="DHm-ys-xm5" secondAttribute="bottom" constant="15" id="i3v-Ot-etO"/>
+                            <constraint firstAttribute="trailing" secondItem="pNW-2B-GyO" secondAttribute="trailing" constant="15" id="jTA-9a-F0k"/>
                             <constraint firstItem="ILk-kJ-iN8" firstAttribute="leading" secondItem="HC8-ym-3md" secondAttribute="trailing" constant="5" id="jfy-d3-tw1"/>
                             <constraint firstItem="33M-9O-DGF" firstAttribute="leading" secondItem="PIj-UR-ptc" secondAttribute="leading" constant="15" id="kXy-l6-4dm"/>
                             <constraint firstItem="cgO-5b-Pvh" firstAttribute="top" secondItem="lwP-Sw-A8E" secondAttribute="bottom" constant="15" id="l0r-sl-5ec"/>
-                            <constraint firstItem="Swc-NS-QdB" firstAttribute="top" secondItem="fm0-BO-I7j" secondAttribute="bottom" constant="15" id="l6Y-wO-z5j"/>
                             <constraint firstItem="fm0-BO-I7j" firstAttribute="top" secondItem="33M-9O-DGF" secondAttribute="bottom" constant="15" id="y0Q-is-kyB"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="mapView" destination="Swc-NS-QdB" id="z2z-GG-5nU"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTZ-mK-ryk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

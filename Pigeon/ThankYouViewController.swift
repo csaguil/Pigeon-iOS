@@ -34,6 +34,7 @@ class ThankYouViewController: PigeonViewController {
     }
     
     @IBAction func dismiss(_ sender: Any) {
+        //unwinding back to view rides and requests tab
         performSegue(withIdentifier: "unwindSegueToViewRidesRequests", sender: self)
     }
     

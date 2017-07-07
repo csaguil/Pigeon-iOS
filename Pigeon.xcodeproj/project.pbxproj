@@ -30,6 +30,7 @@
 		4084E9E91EEFA62500D3219C /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4084E9E51EEFA62500D3219C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		40B800311EFCCEEA00938ECA /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B800301EFCCEEA00938ECA /* ThankYouViewController.swift */; };
 		40C963201EFA477500735BF1 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C9631F1EFA477500735BF1 /* LegalViewController.swift */; };
+		40E5C2581F0C9C8300C17F3D /* PigeonDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E5C2571F0C9C8300C17F3D /* PigeonDataModels.swift */; };
 		968E18DFCD5EEA64185054D2 /* Pods_PigeonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826D54209D801B46D5E7EB7E /* Pods_PigeonTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		40B800301EFCCEEA00938ECA /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		40BF235C1EEFA36400A4711D /* Pigeon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pigeon.entitlements; sourceTree = "<group>"; };
 		40C9631F1EFA477500735BF1 /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
+		40E5C2571F0C9C8300C17F3D /* PigeonDataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PigeonDataModels.swift; sourceTree = "<group>"; };
 		826D54209D801B46D5E7EB7E /* Pods_PigeonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PigeonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7493D11FC038577CDD29B5 /* Pods-PigeonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PigeonTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PigeonTests/Pods-PigeonTests.release.xcconfig"; sourceTree = "<group>"; };
 		A498F50DCEC17957AA56A2B1 /* Pods-PigeonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PigeonTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PigeonTests/Pods-PigeonTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				407C21831EEA670D00EDD88B /* PigeonTabBarController.swift */,
 				407C21851EEA6C8200EDD88B /* PigeonColors.swift */,
 				407C21611EEA63FF00EDD88B /* ViewViewController.swift */,
+				40E5C2571F0C9C8300C17F3D /* PigeonDataModels.swift */,
 				4055D3EE1EF2B650003BCEF9 /* ItemDetailViewController.swift */,
 				4055D3F01EF3ACA0003BCEF9 /* TripDetailsRideViewController.swift */,
 				407C21891EEA824400EDD88B /* PigeonViewController.swift */,
@@ -409,6 +412,7 @@
 				407C21621EEA63FF00EDD88B /* ViewViewController.swift in Sources */,
 				407C21861EEA6C8200EDD88B /* PigeonColors.swift in Sources */,
 				407C218E1EEA89C700EDD88B /* NewRequestViewController.swift in Sources */,
+				40E5C2581F0C9C8300C17F3D /* PigeonDataModels.swift in Sources */,
 				407C21841EEA670D00EDD88B /* PigeonTabBarController.swift in Sources */,
 				407C218A1EEA824400EDD88B /* PigeonViewController.swift in Sources */,
 				4055D3EF1EF2B650003BCEF9 /* ItemDetailViewController.swift in Sources */,
