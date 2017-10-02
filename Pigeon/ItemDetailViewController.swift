@@ -8,11 +8,21 @@
 
 import UIKit
 import GoogleMaps
+import RealmSwift
 
 class ItemDetailViewController: PigeonViewController {
     
     var ride: RideListing? = nil
     var request: RequestListing? = nil
+    var isRide = true
+    var type = DataType.RideListing
+    
+    //textfields
+    var firstNameField = UITextField()
+    var lastNameField = UITextField()
+    var emailField = UITextField()
+    var phoneField = UITextField()
+    
     @IBOutlet var mapView: GMSMapView!
     
     override func viewDidLoad() {
@@ -34,7 +44,11 @@ class ItemDetailViewController: PigeonViewController {
         let dateLabel = self.view.viewWithTag(1001) as! UILabel
         let timeLabel = self.view.viewWithTag(1002) as! UILabel
         let seatsLabel = self.view.viewWithTag(3001) as! UILabel
-        let finishButton = self.view.viewWithTag(4001) as! UIButton
+        let finishButton = self.view.viewWithTag(5001) as! UIButton
+        firstNameField = self.view.viewWithTag(4001) as! UITextField
+        lastNameField = self.view.viewWithTag(4002) as! UITextField
+        emailField = self.view.viewWithTag(4003) as! UITextField
+        phoneField = self.view.viewWithTag(4004) as! UITextField
         
         if ride != nil{
             //setting text
@@ -56,7 +70,17 @@ class ItemDetailViewController: PigeonViewController {
             timeLabel.text = self.request?.time
             seatsLabel.isHidden = true
             finishButton.setTitle("Accept Request", for: UIControlState.normal)
+            isRide = false
         }
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func setupMap() {
@@ -72,7 +96,79 @@ class ItemDetailViewController: PigeonViewController {
         
     }
     
+    func createRideRequest() -> RideRequest {
+        let requestor = RideRequest()
+        if firstNameField.text != nil {
+            requestor.firstName = firstNameField.text!
+        }
+        if lastNameField.text != nil {
+            requestor.lastName = lastNameField.text!
+        }
+        if emailField.text != nil {
+            requestor.email = emailField.text!
+        }
+        if phoneField.text != nil {
+            requestor.phone = phoneField.text!
+        }
+        requestor.ride = self.ride!
+        return requestor
+    }
+    
+    func createRequestAcceptance() -> RequestAcceptance {
+        let acceptor = RequestAcceptance()
+        if firstNameField.text != nil {
+            acceptor.firstName = firstNameField.text!
+        }
+        if lastNameField.text != nil {
+            acceptor.lastName = lastNameField.text!
+        }
+        if emailField.text != nil {
+            acceptor.email = emailField.text!
+        }
+        if phoneField.text != nil {
+            acceptor.phone = phoneField.text!
+        }
+        acceptor.request = self.request!
+        return acceptor
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ThankYouSegue" {
+            let destinationVC = segue.destination as! ThankYouViewController
+            destinationVC.isRide = self.isRide
+        }
+    }
+    
     @IBAction func finishPressed(_ sender: Any) {
+        // Log in existing user with username and password
+        let username = "public"
+        let password = "public"
+        SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false), server: URL(string: "http://165.227.121.141:9080/")!) { user, error in
+            guard let user = user else {
+                fatalError(String(describing: error))
+            }
+            
+            DispatchQueue.main.async {
+                // Open Realm
+                let configuration = Realm.Configuration(
+                    syncConfiguration: SyncConfiguration(user: user, realmURL: URL(string: "realm://165.227.121.141:9080/~/requests_accepts")!)
+                )
+                Realm.asyncOpen(configuration: configuration) { realm, error in
+                    if let realm = realm {
+                        // Realm successfully opened, with all remote data available
+                        try! realm.write {
+                            if self.isRide {
+                                realm.add(self.createRideRequest())
+                            } else {
+                                realm.add(self.createRequestAcceptance())
+                            }
+                        }
+                        self.performSegue(withIdentifier: "ThankYouSegue", sender: nil)
+                    }
+                    
+                }
+            }
+        }
         
     }
 }

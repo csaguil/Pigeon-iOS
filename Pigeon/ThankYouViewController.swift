@@ -12,6 +12,7 @@ class ThankYouViewController: PigeonViewController {
     
     var message = UILabel()
     var isRide = true
+    var type = DataType.RideListing
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +27,19 @@ class ThankYouViewController: PigeonViewController {
     
     func setupUI() {
         message = self.view.viewWithTag(1001) as! UILabel
-        if isRide {
-            message.text = "Your ride listing is pending approval. Please check back in a few hours to see if your ride was approved"
-        } else {
-            message.text = "Your request for a ride is pending approval. Please check back in a few hours to see if your request was approved"
+        
+        switch type {
+        case .RideListing:
+            message.text = "Your Ride Listing is pending approval. Please check back in a few hours to see if your ride was approved"
+        
+        case .RequestListing:
+            message.text = "Your Request Listing is pending approval. Please check back in a few hours to see if your request was approved"
+            
+        case .RideRequest:
+            message.text = "We have received your Ride Request. Please check your email in a few hours for next steps"
+            
+        case .RequestAcceptance:
+            message.text = "We have received your Request Acceptance. Please check your email in a few hours for next steps"
         }
     }
     

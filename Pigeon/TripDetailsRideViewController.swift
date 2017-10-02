@@ -12,6 +12,7 @@ import RealmSwift
 class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDelegate, UITextFieldDelegate {
     
     var isRide = true
+    var type = DataType.RideListing
     
     var indicator1 = UIView()
     var indicator2 = UIView()
@@ -156,6 +157,9 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
         }
         if objectData["email"] != nil {
             ride.email = objectData["email"]!
+            if ride.email.contains("@colgate.edu") {
+                ride.approved = true
+            }
         }
         if objectData["phone"] != nil {
             ride.phone = objectData["phone"]!
@@ -186,6 +190,9 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
         }
         if objectData["email"] != nil {
             request.email = objectData["email"]!
+            if request.email.contains("@colgate.edu") {
+                request.approved = true
+            }
         }
         if objectData["phone"] != nil {
             request.phone = objectData["phone"]!
@@ -208,9 +215,9 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
     
     @IBAction func listRide(_ sender: Any) {
         // Log in existing user with username and password
-        let username = "publicUser@mail.com"  // <--- Update this
-        let password = "password"  // <--- Update this
-        SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false), server: URL(string: "http://128.199.67.219:9080/")!) { user, error in
+        let username = "public"
+        let password = "public"
+        SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false), server: URL(string: "http://165.227.121.141:9080/")!) { user, error in
             guard let user = user else {
                 fatalError(String(describing: error))
             }
@@ -218,7 +225,7 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
             DispatchQueue.main.async {
                 // Open Realm
                 let configuration = Realm.Configuration(
-                    syncConfiguration: SyncConfiguration(user: user, realmURL: URL(string: "realm://128.199.67.219:9080/~/ridesharing")!)
+                    syncConfiguration: SyncConfiguration(user: user, realmURL: URL(string: "realm://165.227.121.141:9080/~/ridesharing")!)
                 )
                 Realm.asyncOpen(configuration: configuration) { realm, error in
                     if let realm = realm {

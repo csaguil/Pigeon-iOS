@@ -42,9 +42,9 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         if segue.identifier == "showDetail" {
             let destinationVC = segue.destination as! ItemDetailViewController
             if ridesToggled {
-                destinationVC.ride = self.realm.objects(RideListing.self)[selectedRow]
+                destinationVC.ride = self.realm.objects(RideListing.self)[selectedRow].copy2()
             } else {
-                destinationVC.request = self.realm.objects(RequestListing.self)[selectedRow]
+                destinationVC.request = self.realm.objects(RequestListing.self)[selectedRow].copy2()
             }
         }
     }
@@ -60,9 +60,9 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     
     func setupRealm(){
         // Log in using public username and password
-        let username = "publicUser@mail.com"
-        let password = "password"
-        SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false), server: URL(string: "http://128.199.67.219:9080/")!) { user, error in
+        let username = "public"
+        let password = "public"
+        SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false), server: URL(string: "http://165.227.121.141:9080/")!) { user, error in
             guard let user = user else {
                 return
             }
@@ -70,7 +70,7 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
             DispatchQueue.main.async {
                 // Open Realm
                 let configuration = Realm.Configuration(
-                    syncConfiguration: SyncConfiguration(user: user, realmURL: URL(string: "realm://128.199.67.219:9080/~/ridesharing")!)
+                    syncConfiguration: SyncConfiguration(user: user, realmURL: URL(string: "realm://165.227.121.141:9080/~/ridesharing")!)
                 )
                 Realm.asyncOpen(configuration: configuration) { realm, error in
                     if let realm = realm {

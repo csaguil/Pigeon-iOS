@@ -10,6 +10,7 @@ import UIKit
 
 class CreateViewController: PigeonViewController {
     var isRide = true
+    var type = DataType.RideListing
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +32,13 @@ class CreateViewController: PigeonViewController {
     
     @IBAction func newRide(_ sender: Any) {
         isRide = true
+        type = DataType.RideListing
         self.performSegue(withIdentifier: "showYourDetails", sender: nil)
     }
 
     @IBAction func newRequest(_ sender: Any) {
         isRide = false
+        type = DataType.RequestListing
         self.performSegue(withIdentifier: "showYourDetails", sender: nil)
     }
 
