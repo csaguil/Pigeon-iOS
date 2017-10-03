@@ -28,6 +28,7 @@
 		4084E9E71EEFA62500D3219C /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4084E9E41EEFA62500D3219C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4084E9E81EEFA62500D3219C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4084E9E51EEFA62500D3219C /* RealmSwift.framework */; };
 		4084E9E91EEFA62500D3219C /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4084E9E51EEFA62500D3219C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		40AE52B71F832FCD00C94BBD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AE52B61F832FCD00C94BBD /* AboutViewController.swift */; };
 		40B800311EFCCEEA00938ECA /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B800301EFCCEEA00938ECA /* ThankYouViewController.swift */; };
 		40C963201EFA477500735BF1 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C9631F1EFA477500735BF1 /* LegalViewController.swift */; };
 		40E5C2581F0C9C8300C17F3D /* PigeonDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E5C2571F0C9C8300C17F3D /* PigeonDataModels.swift */; };
@@ -83,6 +84,7 @@
 		407C218D1EEA89C700EDD88B /* NewRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRequestViewController.swift; sourceTree = "<group>"; };
 		4084E9E41EEFA62500D3219C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		4084E9E51EEFA62500D3219C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		40AE52B61F832FCD00C94BBD /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		40B800301EFCCEEA00938ECA /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		40BF235C1EEFA36400A4711D /* Pigeon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pigeon.entitlements; sourceTree = "<group>"; };
 		40C9631F1EFA477500735BF1 /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				407C21651EEA63FF00EDD88B /* Main.storyboard */,
 				40B800301EFCCEEA00938ECA /* ThankYouViewController.swift */,
 				40C9631F1EFA477500735BF1 /* LegalViewController.swift */,
+				40AE52B61F832FCD00C94BBD /* AboutViewController.swift */,
 				407C218B1EEA89AE00EDD88B /* YourDetailsViewController.swift */,
 				407C218D1EEA89C700EDD88B /* NewRequestViewController.swift */,
 				407C21871EEA71ED00EDD88B /* PigeonNavigationController.swift */,
@@ -417,6 +420,7 @@
 				407C218A1EEA824400EDD88B /* PigeonViewController.swift in Sources */,
 				4055D3EF1EF2B650003BCEF9 /* ItemDetailViewController.swift in Sources */,
 				407C21821EEA662500EDD88B /* SettingsViewController.swift in Sources */,
+				40AE52B71F832FCD00C94BBD /* AboutViewController.swift in Sources */,
 				407C218C1EEA89AE00EDD88B /* YourDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

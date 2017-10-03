@@ -47,7 +47,10 @@ class SettingsViewController: PigeonViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 1 {
+        if indexPath.row == 0 {
+            self.performSegue(withIdentifier: "settingsToAbout", sender: nil)
+        }
+        else if indexPath.row == 1 {
             self.performSegue(withIdentifier: "settingsToLegal", sender: nil)
         }
     }
