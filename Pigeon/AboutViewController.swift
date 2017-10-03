@@ -15,7 +15,7 @@ class AboutViewController: PigeonViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.textView.isEditable = false
-        self.textView.text = "Developed by Cristian Saguil, October 2017"
+        self.textView.text = "Developed by Cristian Saguil, October 2017 \n\n'Back Filled' Icon from icons8.com \n'Car' Icon from icons8.com \n'Car Filled' Icon from icons8.com \n'Create' Icon from icons8.com \n'Create Filled' Icon from icons8.com \n'Settings' Icon from icons8.com \n'Settings' Filled” Icon from icons8.com"
     }
     
     override func didReceiveMemoryWarning() {
