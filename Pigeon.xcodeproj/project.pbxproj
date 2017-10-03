@@ -211,6 +211,7 @@
 				4084E9EA1EEFA62500D3219C /* Embed Frameworks */,
 				FA2751B1F5B0BA7601BFF3EC /* [CP] Embed Pods Frameworks */,
 				F2273CAB0F6052D4A7F0B863 /* [CP] Copy Pods Resources */,
+				40878AB41F833CE700BB7B4C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -323,6 +324,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PigeonTests/Pods-PigeonTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		40878AB41F833CE700BB7B4C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
 		};
 		5E9BFFF4EB90CCBED2E43651 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -575,6 +589,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cristiansaguil.Pigeon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -595,6 +610,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cristiansaguil.Pigeon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
