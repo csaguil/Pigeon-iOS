@@ -13,6 +13,7 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
     
     var isRide = true
     var type = DataType.RideListing
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     var indicator1 = UIView()
     var indicator2 = UIView()
@@ -213,7 +214,23 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
         return request
     }
     
+    func setupActivityIndicator(start: Bool) {
+        if start {
+            finishButton.isEnabled = false
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+            view.addSubview(activityIndicator)
+            
+            activityIndicator.startAnimating()
+        } else {
+            finishButton.isEnabled = true
+            activityIndicator.stopAnimating()
+        }
+    }
+    
     @IBAction func listRide(_ sender: Any) {
+        setupActivityIndicator(start: true)
         // Log in existing user with username and password
         let username = "public"
         let password = "public"
@@ -237,6 +254,7 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
                                 realm.add(self.createRequestListing())
                             }
                         }
+                        self.setupActivityIndicator(start: false)
                         self.performSegue(withIdentifier: "ThankYouSegue", sender: nil)
                     }
                     

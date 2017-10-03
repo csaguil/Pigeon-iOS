@@ -16,12 +16,15 @@ class ItemDetailViewController: PigeonViewController {
     var request: RequestListing? = nil
     var isRide = true
     var type = DataType.RideListing
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     //textfields
     var firstNameField = UITextField()
     var lastNameField = UITextField()
     var emailField = UITextField()
     var phoneField = UITextField()
+    
+    var finishButton = UIButton()
     
     @IBOutlet var mapView: GMSMapView!
     
@@ -44,7 +47,7 @@ class ItemDetailViewController: PigeonViewController {
         let dateLabel = self.view.viewWithTag(1001) as! UILabel
         let timeLabel = self.view.viewWithTag(1002) as! UILabel
         let seatsLabel = self.view.viewWithTag(3001) as! UILabel
-        let finishButton = self.view.viewWithTag(5001) as! UIButton
+        finishButton = self.view.viewWithTag(5001) as! UIButton
         firstNameField = self.view.viewWithTag(4001) as! UITextField
         lastNameField = self.view.viewWithTag(4002) as! UITextField
         emailField = self.view.viewWithTag(4003) as! UITextField
@@ -139,7 +142,23 @@ class ItemDetailViewController: PigeonViewController {
         }
     }
     
+    func setupActivityIndicator(start: Bool) {
+        if start {
+            finishButton.isEnabled = false
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+            view.addSubview(activityIndicator)
+            
+            activityIndicator.startAnimating()
+        } else {
+            finishButton.isEnabled = true
+            activityIndicator.stopAnimating()
+        }
+    }
+    
     @IBAction func finishPressed(_ sender: Any) {
+        setupActivityIndicator(start: true)
         // Log in existing user with username and password
         let username = "public"
         let password = "public"
@@ -163,6 +182,7 @@ class ItemDetailViewController: PigeonViewController {
                                 realm.add(self.createRequestAcceptance())
                             }
                         }
+                        self.setupActivityIndicator(start: false)
                         self.performSegue(withIdentifier: "ThankYouSegue", sender: nil)
                     }
                     
