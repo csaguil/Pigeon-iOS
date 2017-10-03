@@ -229,6 +229,15 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
         }
     }
     
+    func clearTextFields() {
+        originField.text = ""
+        destField.text = ""
+        dateField.text = ""
+        timeField.text = ""
+        seatsField.text = ""
+        
+    }
+    
     @IBAction func listRide(_ sender: Any) {
         setupActivityIndicator(start: true)
         // Log in existing user with username and password
@@ -255,6 +264,7 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
                             }
                         }
                         self.setupActivityIndicator(start: false)
+                        self.clearTextFields()
                         self.performSegue(withIdentifier: "ThankYouSegue", sender: nil)
                     }
                     

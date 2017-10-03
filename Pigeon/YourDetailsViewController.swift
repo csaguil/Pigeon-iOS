@@ -15,6 +15,12 @@ class YourDetailsViewController: PigeonViewController, UITableViewDelegate, UITa
     var isRide: Bool = true
     var objectData = Dictionary<String, String>()
     
+    var firstNameField = UITextField()
+    var lastNameField = UITextField()
+    var emailField = UITextField()
+    var phoneField = UITextField()
+    var classField = UITextField()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -81,6 +87,15 @@ class YourDetailsViewController: PigeonViewController, UITableViewDelegate, UITa
         textField.leftView = spacerView
         textField.delegate = self
         
+        switch indexPath.row {
+        case 0: firstNameField = textField
+        case 1: lastNameField = textField
+        case 2: emailField = textField
+        case 3: phoneField = textField
+        case 4: classField = textField
+        default: break
+        }
+        
         return cell
     }
     
@@ -97,8 +112,17 @@ class YourDetailsViewController: PigeonViewController, UITableViewDelegate, UITa
         view.endEditing(true)
     }
     
+    func clearTextFields() {
+        firstNameField.text = ""
+        lastNameField.text = ""
+        emailField.text = ""
+        phoneField.text = ""
+        classField.text = ""
+    }
+    
     @IBAction func nextButtonPressed(_ sender: Any) {
-            self.performSegue(withIdentifier: "showTripDetailsRide", sender: self)
+        clearTextFields()
+        self.performSegue(withIdentifier: "showTripDetailsRide", sender: self)
     }
     
     
