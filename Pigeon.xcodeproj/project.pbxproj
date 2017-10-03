@@ -7,13 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1188D8046FD2DA807C25CDFF /* Pods_Pigeon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E533F435659DA5002B837DE1 /* Pods_Pigeon.framework */; };
+		4055D3EF1EF2B650003BCEF9 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055D3EE1EF2B650003BCEF9 /* ItemDetailViewController.swift */; };
+		4055D3F11EF3ACA0003BCEF9 /* TripDetailsRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055D3F01EF3ACA0003BCEF9 /* TripDetailsRideViewController.swift */; };
 		407C21601EEA63FF00EDD88B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C215F1EEA63FF00EDD88B /* AppDelegate.swift */; };
-		407C21621EEA63FF00EDD88B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21611EEA63FF00EDD88B /* FirstViewController.swift */; };
-		407C21641EEA63FF00EDD88B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21631EEA63FF00EDD88B /* SecondViewController.swift */; };
+		407C21621EEA63FF00EDD88B /* ViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21611EEA63FF00EDD88B /* ViewViewController.swift */; };
+		407C21641EEA63FF00EDD88B /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21631EEA63FF00EDD88B /* CreateViewController.swift */; };
 		407C21671EEA63FF00EDD88B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407C21651EEA63FF00EDD88B /* Main.storyboard */; };
 		407C21691EEA63FF00EDD88B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 407C21681EEA63FF00EDD88B /* Assets.xcassets */; };
 		407C216C1EEA63FF00EDD88B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407C216A1EEA63FF00EDD88B /* LaunchScreen.storyboard */; };
 		407C21771EEA63FF00EDD88B /* PigeonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21761EEA63FF00EDD88B /* PigeonTests.swift */; };
+		407C21821EEA662500EDD88B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21811EEA662500EDD88B /* SettingsViewController.swift */; };
+		407C21841EEA670D00EDD88B /* PigeonTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21831EEA670D00EDD88B /* PigeonTabBarController.swift */; };
+		407C21861EEA6C8200EDD88B /* PigeonColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21851EEA6C8200EDD88B /* PigeonColors.swift */; };
+		407C21881EEA71ED00EDD88B /* PigeonNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21871EEA71ED00EDD88B /* PigeonNavigationController.swift */; };
+		407C218A1EEA824400EDD88B /* PigeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C21891EEA824400EDD88B /* PigeonViewController.swift */; };
+		407C218C1EEA89AE00EDD88B /* YourDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C218B1EEA89AE00EDD88B /* YourDetailsViewController.swift */; };
+		407C218E1EEA89C700EDD88B /* NewRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C218D1EEA89C700EDD88B /* NewRequestViewController.swift */; };
+		4084E9E61EEFA62500D3219C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4084E9E41EEFA62500D3219C /* Realm.framework */; };
+		4084E9E71EEFA62500D3219C /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4084E9E41EEFA62500D3219C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4084E9E81EEFA62500D3219C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4084E9E51EEFA62500D3219C /* RealmSwift.framework */; };
+		4084E9E91EEFA62500D3219C /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4084E9E51EEFA62500D3219C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		40AE52B71F832FCD00C94BBD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AE52B61F832FCD00C94BBD /* AboutViewController.swift */; };
+		40B800311EFCCEEA00938ECA /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B800301EFCCEEA00938ECA /* ThankYouViewController.swift */; };
+		40C963201EFA477500735BF1 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C9631F1EFA477500735BF1 /* LegalViewController.swift */; };
+		40E5C2581F0C9C8300C17F3D /* PigeonDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E5C2571F0C9C8300C17F3D /* PigeonDataModels.swift */; };
+		968E18DFCD5EEA64185054D2 /* Pods_PigeonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826D54209D801B46D5E7EB7E /* Pods_PigeonTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,11 +45,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4084E9EA1EEFA62500D3219C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4084E9E91EEFA62500D3219C /* RealmSwift.framework in Embed Frameworks */,
+				4084E9E71EEFA62500D3219C /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		18DB7FF5BC5427F654256DF7 /* Pods-Pigeon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pigeon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pigeon/Pods-Pigeon.release.xcconfig"; sourceTree = "<group>"; };
+		4055D3EE1EF2B650003BCEF9 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		4055D3F01EF3ACA0003BCEF9 /* TripDetailsRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDetailsRideViewController.swift; sourceTree = "<group>"; };
 		407C215C1EEA63FF00EDD88B /* Pigeon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pigeon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		407C215F1EEA63FF00EDD88B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		407C21611EEA63FF00EDD88B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		407C21631EEA63FF00EDD88B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		407C21611EEA63FF00EDD88B /* ViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewViewController.swift; sourceTree = "<group>"; };
+		407C21631EEA63FF00EDD88B /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		407C21661EEA63FF00EDD88B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		407C21681EEA63FF00EDD88B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		407C216B1EEA63FF00EDD88B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +75,25 @@
 		407C21721EEA63FF00EDD88B /* PigeonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PigeonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		407C21761EEA63FF00EDD88B /* PigeonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PigeonTests.swift; sourceTree = "<group>"; };
 		407C21781EEA63FF00EDD88B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		407C21811EEA662500EDD88B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		407C21831EEA670D00EDD88B /* PigeonTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PigeonTabBarController.swift; sourceTree = "<group>"; };
+		407C21851EEA6C8200EDD88B /* PigeonColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PigeonColors.swift; sourceTree = "<group>"; };
+		407C21871EEA71ED00EDD88B /* PigeonNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PigeonNavigationController.swift; sourceTree = "<group>"; };
+		407C21891EEA824400EDD88B /* PigeonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PigeonViewController.swift; sourceTree = "<group>"; };
+		407C218B1EEA89AE00EDD88B /* YourDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourDetailsViewController.swift; sourceTree = "<group>"; };
+		407C218D1EEA89C700EDD88B /* NewRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRequestViewController.swift; sourceTree = "<group>"; };
+		4084E9E41EEFA62500D3219C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		4084E9E51EEFA62500D3219C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		40AE52B61F832FCD00C94BBD /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		40B800301EFCCEEA00938ECA /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
+		40BF235C1EEFA36400A4711D /* Pigeon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pigeon.entitlements; sourceTree = "<group>"; };
+		40C9631F1EFA477500735BF1 /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
+		40E5C2571F0C9C8300C17F3D /* PigeonDataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PigeonDataModels.swift; sourceTree = "<group>"; };
+		826D54209D801B46D5E7EB7E /* Pods_PigeonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PigeonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D7493D11FC038577CDD29B5 /* Pods-PigeonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PigeonTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PigeonTests/Pods-PigeonTests.release.xcconfig"; sourceTree = "<group>"; };
+		A498F50DCEC17957AA56A2B1 /* Pods-PigeonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PigeonTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PigeonTests/Pods-PigeonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C31906916797A5910F7283E0 /* Pods-Pigeon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pigeon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pigeon/Pods-Pigeon.debug.xcconfig"; sourceTree = "<group>"; };
+		E533F435659DA5002B837DE1 /* Pods_Pigeon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pigeon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +101,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4084E9E81EEFA62500D3219C /* RealmSwift.framework in Frameworks */,
+				4084E9E61EEFA62500D3219C /* Realm.framework in Frameworks */,
+				1188D8046FD2DA807C25CDFF /* Pods_Pigeon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				968E18DFCD5EEA64185054D2 /* Pods_PigeonTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,9 +121,13 @@
 		407C21531EEA63FE00EDD88B = {
 			isa = PBXGroup;
 			children = (
+				4084E9E41EEFA62500D3219C /* Realm.framework */,
+				4084E9E51EEFA62500D3219C /* RealmSwift.framework */,
 				407C215E1EEA63FF00EDD88B /* Pigeon */,
 				407C21751EEA63FF00EDD88B /* PigeonTests */,
 				407C215D1EEA63FF00EDD88B /* Products */,
+				ECD90979D383B0F14826B11C /* Pods */,
+				8D66862879A5B4A5F534DCD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,10 +143,24 @@
 		407C215E1EEA63FF00EDD88B /* Pigeon */ = {
 			isa = PBXGroup;
 			children = (
+				40BF235C1EEFA36400A4711D /* Pigeon.entitlements */,
 				407C215F1EEA63FF00EDD88B /* AppDelegate.swift */,
-				407C21611EEA63FF00EDD88B /* FirstViewController.swift */,
-				407C21631EEA63FF00EDD88B /* SecondViewController.swift */,
+				407C21831EEA670D00EDD88B /* PigeonTabBarController.swift */,
+				407C21851EEA6C8200EDD88B /* PigeonColors.swift */,
+				407C21611EEA63FF00EDD88B /* ViewViewController.swift */,
+				40E5C2571F0C9C8300C17F3D /* PigeonDataModels.swift */,
+				4055D3EE1EF2B650003BCEF9 /* ItemDetailViewController.swift */,
+				4055D3F01EF3ACA0003BCEF9 /* TripDetailsRideViewController.swift */,
+				407C21891EEA824400EDD88B /* PigeonViewController.swift */,
+				407C21631EEA63FF00EDD88B /* CreateViewController.swift */,
+				407C21811EEA662500EDD88B /* SettingsViewController.swift */,
 				407C21651EEA63FF00EDD88B /* Main.storyboard */,
+				40B800301EFCCEEA00938ECA /* ThankYouViewController.swift */,
+				40C9631F1EFA477500735BF1 /* LegalViewController.swift */,
+				40AE52B61F832FCD00C94BBD /* AboutViewController.swift */,
+				407C218B1EEA89AE00EDD88B /* YourDetailsViewController.swift */,
+				407C218D1EEA89C700EDD88B /* NewRequestViewController.swift */,
+				407C21871EEA71ED00EDD88B /* PigeonNavigationController.swift */,
 				407C21681EEA63FF00EDD88B /* Assets.xcassets */,
 				407C216A1EEA63FF00EDD88B /* LaunchScreen.storyboard */,
 				407C216D1EEA63FF00EDD88B /* Info.plist */,
@@ -99,6 +177,26 @@
 			path = PigeonTests;
 			sourceTree = "<group>";
 		};
+		8D66862879A5B4A5F534DCD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E533F435659DA5002B837DE1 /* Pods_Pigeon.framework */,
+				826D54209D801B46D5E7EB7E /* Pods_PigeonTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECD90979D383B0F14826B11C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C31906916797A5910F7283E0 /* Pods-Pigeon.debug.xcconfig */,
+				18DB7FF5BC5427F654256DF7 /* Pods-Pigeon.release.xcconfig */,
+				A498F50DCEC17957AA56A2B1 /* Pods-PigeonTests.debug.xcconfig */,
+				9D7493D11FC038577CDD29B5 /* Pods-PigeonTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +204,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 407C217B1EEA63FF00EDD88B /* Build configuration list for PBXNativeTarget "Pigeon" */;
 			buildPhases = (
+				A95A566A10830783758D103D /* [CP] Check Pods Manifest.lock */,
 				407C21581EEA63FE00EDD88B /* Sources */,
 				407C21591EEA63FE00EDD88B /* Frameworks */,
 				407C215A1EEA63FE00EDD88B /* Resources */,
+				4084E9EA1EEFA62500D3219C /* Embed Frameworks */,
+				FA2751B1F5B0BA7601BFF3EC /* [CP] Embed Pods Frameworks */,
+				F2273CAB0F6052D4A7F0B863 /* [CP] Copy Pods Resources */,
+				40878AB41F833CE700BB7B4C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -123,9 +226,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 407C217E1EEA63FF00EDD88B /* Build configuration list for PBXNativeTarget "PigeonTests" */;
 			buildPhases = (
+				713D037D0D9CA656FC041787 /* [CP] Check Pods Manifest.lock */,
 				407C216E1EEA63FF00EDD88B /* Sources */,
 				407C216F1EEA63FF00EDD88B /* Frameworks */,
 				407C21701EEA63FF00EDD88B /* Resources */,
+				22167EC2B8067E17631C846F /* [CP] Embed Pods Frameworks */,
+				5E9BFFF4EB90CCBED2E43651 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,7 +255,13 @@
 				TargetAttributes = {
 					407C215B1EEA63FE00EDD88B = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = B79KW7LMAH;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					407C21711EEA63FF00EDD88B = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -197,14 +309,133 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22167EC2B8067E17631C846F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PigeonTests/Pods-PigeonTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40878AB41F833CE700BB7B4C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+		5E9BFFF4EB90CCBED2E43651 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PigeonTests/Pods-PigeonTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		713D037D0D9CA656FC041787 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A95A566A10830783758D103D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F2273CAB0F6052D4A7F0B863 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pigeon/Pods-Pigeon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA2751B1F5B0BA7601BFF3EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pigeon/Pods-Pigeon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		407C21581EEA63FE00EDD88B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				407C21641EEA63FF00EDD88B /* SecondViewController.swift in Sources */,
+				407C21641EEA63FF00EDD88B /* CreateViewController.swift in Sources */,
 				407C21601EEA63FF00EDD88B /* AppDelegate.swift in Sources */,
-				407C21621EEA63FF00EDD88B /* FirstViewController.swift in Sources */,
+				4055D3F11EF3ACA0003BCEF9 /* TripDetailsRideViewController.swift in Sources */,
+				40B800311EFCCEEA00938ECA /* ThankYouViewController.swift in Sources */,
+				40C963201EFA477500735BF1 /* LegalViewController.swift in Sources */,
+				407C21881EEA71ED00EDD88B /* PigeonNavigationController.swift in Sources */,
+				407C21621EEA63FF00EDD88B /* ViewViewController.swift in Sources */,
+				407C21861EEA6C8200EDD88B /* PigeonColors.swift in Sources */,
+				407C218E1EEA89C700EDD88B /* NewRequestViewController.swift in Sources */,
+				40E5C2581F0C9C8300C17F3D /* PigeonDataModels.swift in Sources */,
+				407C21841EEA670D00EDD88B /* PigeonTabBarController.swift in Sources */,
+				407C218A1EEA824400EDD88B /* PigeonViewController.swift in Sources */,
+				4055D3EF1EF2B650003BCEF9 /* ItemDetailViewController.swift in Sources */,
+				407C21821EEA662500EDD88B /* SettingsViewController.swift in Sources */,
+				40AE52B71F832FCD00C94BBD /* AboutViewController.swift in Sources */,
+				407C218C1EEA89AE00EDD88B /* YourDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,30 +574,49 @@
 		};
 		407C217C1EEA63FF00EDD88B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C31906916797A5910F7283E0 /* Pods-Pigeon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pigeon/Pigeon.entitlements;
+				DEVELOPMENT_TEAM = B79KW7LMAH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Pigeon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cristiansaguil.Pigeon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		407C217D1EEA63FF00EDD88B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18DB7FF5BC5427F654256DF7 /* Pods-Pigeon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pigeon/Pigeon.entitlements;
+				DEVELOPMENT_TEAM = B79KW7LMAH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Pigeon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cristiansaguil.Pigeon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		407C217F1EEA63FF00EDD88B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A498F50DCEC17957AA56A2B1 /* Pods-PigeonTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -381,6 +631,7 @@
 		};
 		407C21801EEA63FF00EDD88B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D7493D11FC038577CDD29B5 /* Pods-PigeonTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -412,6 +663,7 @@
 				407C217D1EEA63FF00EDD88B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		407C217E1EEA63FF00EDD88B /* Build configuration list for PBXNativeTarget "PigeonTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +672,7 @@
 				407C21801EEA63FF00EDD88B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
