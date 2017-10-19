@@ -18,6 +18,8 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     
     var notificationToken: NotificationToken!
     var realm: Realm!
+    var approvedRides: Results<RideListing>!
+    var approvedRequests: Results<RequestListing>!
     
     
     override func viewDidLoad() {
@@ -42,9 +44,9 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         if segue.identifier == "showDetail" {
             let destinationVC = segue.destination as! ItemDetailViewController
             if ridesToggled {
-                destinationVC.ride = self.realm.objects(RideListing.self)[selectedRow].copy2()
+                destinationVC.ride = self.approvedRides[selectedRow].copy2()
             } else {
-                destinationVC.request = self.realm.objects(RequestListing.self)[selectedRow].copy2()
+                destinationVC.request = self.approvedRequests[selectedRow].copy2()
             }
         }
     }
@@ -76,6 +78,8 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
                     if let realm = realm {
                         // Realm successfully opened, with all remote data available
                         self.realm = realm
+                        self.approvedRides = realm.objects(RideListing.self).filter("approved == true")
+                        self.approvedRequests = realm.objects(RequestListing.self).filter("approved == true")
                         self.tableView.reloadData()
                         
                         // Notify us when Realm changes
@@ -94,8 +98,8 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.realm != nil{
-            if ridesToggled { return self.realm.objects(RideListing.self).count }
-            else { return self.realm.objects(RequestListing.self).count }
+            if ridesToggled { return self.approvedRides.count }
+            else { return self.approvedRequests.count }
         } else {
             return 0
         }
@@ -112,13 +116,13 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
             let time: UILabel = cell.viewWithTag(1003) as! UILabel
             
             if ridesToggled {
-                let ride: RideListing = self.realm.objects(RideListing.self)[indexPath.row]
+                let ride: RideListing = self.approvedRides[indexPath.row]
                 originTitle.text = ride.origin
                 destTitle.text = ride.destination
                 date.text = ride.date
                 time.text = ride.time
             } else {
-                let request: RequestListing = self.realm.objects(RequestListing.self)[indexPath.row]
+                let request: RequestListing = self.approvedRequests[indexPath.row]
                 originTitle.text = request.origin
                 destTitle.text = request.destination
                 date.text = request.date
