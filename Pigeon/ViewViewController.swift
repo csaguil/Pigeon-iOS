@@ -13,6 +13,8 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     @IBOutlet var buttonRides: UIButton!
     @IBOutlet var buttonRequests: UIButton!
     @IBOutlet var tableView: UITableView!
+    var titleLabel: UILabel!
+    
     var selectedRow = 0
     var ridesToggled = true
     
@@ -30,8 +32,8 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.backgroundColor = colors.darkGray()
-        setupUI()
         setupRealm()
+        setupUI()
         
     }
 
@@ -80,11 +82,13 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
                         self.realm = realm
                         self.approvedRides = realm.objects(RideListing.self).filter("approved == true")
                         self.approvedRequests = realm.objects(RequestListing.self).filter("approved == true")
+                        
                         self.tableView.reloadData()
                         
                         // Notify us when Realm changes
                         self.notificationToken = self.realm.addNotificationBlock { _ in
                             self.tableView.reloadData()
+                            self.setupUI()
                         }
                     }
 
@@ -149,6 +153,16 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         
         buttonRides.setTitleColor(colors.darkGray(), for: UIControlState.normal)
         buttonRequests.setTitleColor(UIColor.white, for: UIControlState.normal)
+        
+        self.titleLabel = self.tableView.viewWithTag(1001) as! UILabel
+        if let a = self.approvedRides {
+            if a.count != 0 {
+                self.titleLabel.text = "Students at Colgate are doing these trips"
+            } else {
+                self.titleLabel.text = "No Ride Listings at the moment"
+            }
+        }
+        
         self.tableView.reloadData()
     }
     @IBAction func toggleRequests(_ sender: Any) {
@@ -158,6 +172,7 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         
         buttonRequests.setTitleColor(colors.darkGray(), for: UIControlState.normal)
         buttonRides.setTitleColor(UIColor.white, for: UIControlState.normal)
+        
         self.tableView.reloadData()
     }
     
