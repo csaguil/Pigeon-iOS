@@ -80,10 +80,11 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
                     if let realm = realm {
                         // Realm successfully opened, with all remote data available
                         self.realm = realm
-                        self.approvedRides = realm.objects(RideListing.self).filter("approved == true")
-                        self.approvedRequests = realm.objects(RequestListing.self).filter("approved == true")
+                        self.approvedRides = realm.objects(RideListing.self).filter(self.filterMessage)
+                        self.approvedRequests = realm.objects(RequestListing.self).filter(self.filterMessage)
                         
                         self.tableView.reloadData()
+                        self.toggleRides(self)
                         
                         // Notify us when Realm changes
                         self.notificationToken = self.realm.addNotificationBlock { _ in
@@ -172,6 +173,15 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         
         buttonRequests.setTitleColor(colors.darkGray(), for: UIControlState.normal)
         buttonRides.setTitleColor(UIColor.white, for: UIControlState.normal)
+        
+        if let a = self.approvedRequests {
+            if a.count != 0 {
+                self.titleLabel.text = "Students at Colgate are requesting these trips"
+            } else {
+                self.titleLabel.text = "No Request Listings at the moment"
+            }
+        
+        }
         
         self.tableView.reloadData()
     }
