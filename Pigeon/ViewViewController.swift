@@ -80,8 +80,8 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
                     if let realm = realm {
                         // Realm successfully opened, with all remote data available
                         self.realm = realm
-                        self.approvedRides = realm.objects(RideListing.self).filter("approved == true")
-                        self.approvedRequests = realm.objects(RequestListing.self).filter("approved == true")
+                        self.approvedRides = realm.objects(RideListing.self).filter(self.filterMessage)
+                        self.approvedRequests = realm.objects(RequestListing.self).filter(self.filterMessage)
                         
                         self.tableView.reloadData()
                         

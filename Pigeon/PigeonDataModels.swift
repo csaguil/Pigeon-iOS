@@ -20,6 +20,7 @@ final class RideListing: Object {
     dynamic var time: String = ""
     dynamic var seats: Int = 0
     dynamic var approved: Bool = false
+    dynamic var school: String = "Colgate"
     
     func copy2() -> RideListing {
         let copy = RideListing()
@@ -33,6 +34,7 @@ final class RideListing: Object {
         copy.time = self.time
         copy .seats = self.seats
         copy.approved = self.approved
+        
         return copy
     }
 }
@@ -47,6 +49,7 @@ final class RequestListing: Object {
     dynamic var date: String = ""
     dynamic var time: String = ""
     dynamic var approved: Bool = false
+    dynamic var school: String = "Colgate"
     
     func copy2() -> RequestListing {
         let copy = RequestListing()
@@ -69,6 +72,7 @@ final class RideRequest: Object {
     dynamic var lastName: String = ""
     dynamic var email: String = ""
     dynamic var phone: String = ""
+    dynamic var school: String = "Colgate"
 }
 
 final class RequestAcceptance: Object {
@@ -77,6 +81,7 @@ final class RequestAcceptance: Object {
     dynamic var lastName: String = ""
     dynamic var email: String = ""
     dynamic var phone: String = ""
+    dynamic var school: String = "Colgate"
     
 }
 
@@ -86,3 +91,5 @@ enum DataType {
     case RideRequest
     case RequestAcceptance
 }
+
+
