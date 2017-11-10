@@ -160,6 +160,8 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
             ride.email = objectData["email"]!
             if ride.email.contains("@colgate.edu") {
                 ride.approved = true
+            } else {
+                ride.approved = false
             }
         }
         if objectData["phone"] != nil {
@@ -193,6 +195,8 @@ class TripDetailsRideViewController: PigeonViewController, UIGestureRecognizerDe
             request.email = objectData["email"]!
             if request.email.contains("@colgate.edu") {
                 request.approved = true
+            } else {
+                request.approved = false
             }
         }
         if objectData["phone"] != nil {

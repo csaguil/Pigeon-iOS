@@ -10,6 +10,10 @@ import UIKit
 
 class PigeonViewController: UIViewController {
     let colors = PigeonColors()
+    
+    //Dictates all realm filtering
+    var filterMessage = "approved == true AND school == 'Colgate'"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

@@ -13,11 +13,15 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     @IBOutlet var buttonRides: UIButton!
     @IBOutlet var buttonRequests: UIButton!
     @IBOutlet var tableView: UITableView!
+    var titleLabel: UILabel!
+    
     var selectedRow = 0
     var ridesToggled = true
     
     var notificationToken: NotificationToken!
     var realm: Realm!
+    var approvedRides: Results<RideListing>!
+    var approvedRequests: Results<RequestListing>!
     
     
     override func viewDidLoad() {
@@ -28,8 +32,8 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.backgroundColor = colors.darkGray()
-        setupUI()
         setupRealm()
+        setupUI()
         
     }
 
@@ -42,9 +46,9 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         if segue.identifier == "showDetail" {
             let destinationVC = segue.destination as! ItemDetailViewController
             if ridesToggled {
-                destinationVC.ride = self.realm.objects(RideListing.self)[selectedRow].copy2()
+                destinationVC.ride = self.approvedRides[selectedRow].copy2()
             } else {
-                destinationVC.request = self.realm.objects(RequestListing.self)[selectedRow].copy2()
+                destinationVC.request = self.approvedRequests[selectedRow].copy2()
             }
         }
     }
@@ -76,11 +80,16 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
                     if let realm = realm {
                         // Realm successfully opened, with all remote data available
                         self.realm = realm
+                        self.approvedRides = realm.objects(RideListing.self).filter(self.filterMessage)
+                        self.approvedRequests = realm.objects(RequestListing.self).filter(self.filterMessage)
+                        
                         self.tableView.reloadData()
+                        self.toggleRides(self)
                         
                         // Notify us when Realm changes
                         self.notificationToken = self.realm.addNotificationBlock { _ in
                             self.tableView.reloadData()
+                            self.setupUI()
                         }
                     }
 
@@ -94,8 +103,8 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.realm != nil{
-            if ridesToggled { return self.realm.objects(RideListing.self).count }
-            else { return self.realm.objects(RequestListing.self).count }
+            if ridesToggled { return self.approvedRides.count }
+            else { return self.approvedRequests.count }
         } else {
             return 0
         }
@@ -112,13 +121,13 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
             let time: UILabel = cell.viewWithTag(1003) as! UILabel
             
             if ridesToggled {
-                let ride: RideListing = self.realm.objects(RideListing.self)[indexPath.row]
+                let ride: RideListing = self.approvedRides[indexPath.row]
                 originTitle.text = ride.origin
                 destTitle.text = ride.destination
                 date.text = ride.date
                 time.text = ride.time
             } else {
-                let request: RequestListing = self.realm.objects(RequestListing.self)[indexPath.row]
+                let request: RequestListing = self.approvedRequests[indexPath.row]
                 originTitle.text = request.origin
                 destTitle.text = request.destination
                 date.text = request.date
@@ -145,6 +154,16 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         
         buttonRides.setTitleColor(colors.darkGray(), for: UIControlState.normal)
         buttonRequests.setTitleColor(UIColor.white, for: UIControlState.normal)
+        
+        self.titleLabel = self.tableView.viewWithTag(1001) as! UILabel
+        if let a = self.approvedRides {
+            if a.count != 0 {
+                self.titleLabel.text = "Students at Colgate are doing these trips"
+            } else {
+                self.titleLabel.text = "No Ride Listings at the moment"
+            }
+        }
+        
         self.tableView.reloadData()
     }
     @IBAction func toggleRequests(_ sender: Any) {
@@ -154,6 +173,16 @@ class ViewViewController: PigeonViewController, UITableViewDataSource, UITableVi
         
         buttonRequests.setTitleColor(colors.darkGray(), for: UIControlState.normal)
         buttonRides.setTitleColor(UIColor.white, for: UIControlState.normal)
+        
+        if let a = self.approvedRequests {
+            if a.count != 0 {
+                self.titleLabel.text = "Students at Colgate are requesting these trips"
+            } else {
+                self.titleLabel.text = "No Request Listings at the moment"
+            }
+        
+        }
+        
         self.tableView.reloadData()
     }
     
